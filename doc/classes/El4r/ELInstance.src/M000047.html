@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (El4r::ELInstance)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File bin/el4r-instance, line 491</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">conf</span>)
+      <span class="ruby-ivar">@conf</span> = <span class="ruby-identifier">conf</span>
+      <span class="ruby-ivar">@emacs_in</span> = <span class="ruby-constant">STDIN</span>
+      <span class="ruby-ivar">@emacs_out</span> = <span class="ruby-constant">STDOUT</span>
+      <span class="ruby-ivar">@call_level</span> = <span class="ruby-value">0</span>
+      <span class="ruby-ivar">@last_error</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@el4r_is_debug</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;EL4R_DEBUG&quot;</span>]
+      <span class="ruby-ivar">@el4r_homedir</span> = <span class="ruby-identifier">conf</span>.<span class="ruby-identifier">home_dir</span>
+      <span class="ruby-ivar">@elvar</span> = <span class="ruby-constant">ELVariables</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>)
+      <span class="ruby-ivar">@el4r_rubyobj_stock</span> = <span class="ruby-constant">ELRubyObjectStock</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>)
+      <span class="ruby-ivar">@el4r_garbage_elobj_ids</span> = []
+
+      <span class="ruby-ivar">@el4r_output</span> = <span class="ruby-constant">El4rOutput</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">self</span>
+      
+      <span class="ruby-identifier">log</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;EL4R_LOG&quot;</span>]
+      <span class="ruby-ivar">@log</span> = <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">log</span>
+             <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;stderr&quot;</span>; <span class="ruby-constant">STDERR</span>
+             <span class="ruby-keyword kw">when</span> <span class="ruby-regexp re">/^\|/</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-identifier">$~</span>.<span class="ruby-identifier">post_match</span>, <span class="ruby-value str">&quot;w&quot;</span>)
+             <span class="ruby-keyword kw">else</span>; <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">log</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;/tmp/el4r-#{`whoami`.chomp}.#{Process.pid}.log&quot;</span>, <span class="ruby-value str">&quot;w&quot;</span>)
+             <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-ivar">@el_backtrace_reset_threshold</span> = <span class="ruby-value">1</span> <span class="ruby-comment cmt"># very nasty hack!</span>
+      <span class="ruby-ivar">@el_backtrace</span> = []
+
+      <span class="ruby-identifier">$:</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">el4r_homedir</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

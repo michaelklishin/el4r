@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="iso-2022-jp" ?>
+<!DOCTYPE html 
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>el4r - EmacsRuby engine - EmacsLisp for Ruby</title>
+<meta http-equiv="Content-type" content="text/html; charset=iso-2022-jp" />
+<!-- head-element:nil -->
+</head>
+<body>
+<h2>Index</h2>
+
+<ul>
+<li><p><a href="#label:1">What's new</a></p>
+<ul>
+<li><a href="#label:2">[2006/09/21] 1.0.4 released</a></li>
+<li><a href="#label:3">[2006/03/12] 1.0.3 released</a></li>
+<li><a href="#label:4">[2005/12/11] 1.0.2 released</a></li>
+<li><a href="#label:5">[2005/12/02] 1.0.1 released</a></li>
+<li><a href="#label:6">[2005/12/01] 1.0.0 released</a></li>
+<li><a href="#label:7">[2005/10/11] 0.9.3 released</a></li>
+<li><a href="#label:8">[2005/10/05] 0.9.2 released</a></li>
+</ul></li>
+<li><a href="#label:9">Requirements</a></li>
+<li><a href="#label:10">Download / Install / Setup</a></li>
+<li><a href="#label:11">Start and Restart el4r</a></li>
+<li><p><a href="#label:12">Programming EmacsRuby</a></p>
+<ul>
+<li><a href="#label:13">Loading an EmacsRuby script</a></li>
+<li><a href="#label:14">Converting names</a></li>
+<li><a href="#label:15">Accessing EmacsLisp variables</a></li>
+<li><a href="#label:16">Calling EmacsLisp functions</a></li>
+<li><a href="#label:17">Defining EmacsLisp functions</a></li>
+<li><a href="#label:18">Calling special forms</a></li>
+<li><a href="#label:19">Calling defun-type macros</a></li>
+<li><a href="#label:20">Defining advices</a></li>
+<li><a href="#label:21">Output builtin functions</a></li>
+<li><a href="#label:22">Using Emacs features in user-defined Class and Module.</a></li>
+<li><a href="#label:23">Sample of ElApp</a></li>
+<li><a href="#label:24">Sample of ElApp (smart defun)</a></li>
+</ul></li>
+<li><p><a href="#label:25">Making regression tests with Test::Unit</a></p>
+<ul>
+<li><a href="#label:26">Command line options</a></li>
+</ul></li>
+<li><a href="#label:27">The `el4r' command</a></li>
+<li><a href="#label:28">EmacsRuby API Reference</a></li>
+<li><a href="#label:29">Accessing Ruby from EmacsLisp</a></li>
+<li><a href="#label:30">Examples</a></li>
+<li><p><a href="#label:31">Packaging EmacsRuby scripts</a></p>
+<ul>
+<li><a href="#label:32">Directory Structure</a></li>
+<li><a href="#label:33">The `autoload' Directory</a></li>
+<li><a href="#label:34">Packaging with `setup.rb'</a></li>
+</ul></li>
+<li><a href="#label:35">Link</a></li>
+</ul>
+<hr />
+
+<h1><a name="Title:" href="#Title:">Title:</a> <a name="label:0">el4r - EmacsRuby engine - EmacsLisp for Ruby</a></h1><!-- RDLabel: "el4r - EmacsRuby engine - EmacsLisp for Ruby" -->
+
+<pre>$Id: el4r.en.rd.r 1380 2006-09-21 07:23:15Z rubikitch $</pre>
+<p>El4r enables you to write Emacs programs in Ruby as well as in EmacsLisp.
+I call the Ruby language to manipulate Emacs `EmacsRuby'.</p>
+<p>El4r and Test::Unit enables you to unit-test EmacsLisp/EmacsRuby programs automatically.</p>
+<p>This program is originally written by Kaoru Shirai.
+I took over the development of el4r.</p>
+<p>Latest Version: 1.0.4</p>
+<h2><a name="1" href="#1">1</a> <a name="label:1">What's new</a></h2><!-- RDLabel: "What's new" -->
+
+<h3><a name="1.1" href="#1.1">1.1</a> <a name="label:2">[2006/09/21] 1.0.4 released</a></h3><!-- RDLabel: "[2006/09/21] 1.0.4 released" -->
+
+<ul>
+<li>Smart-defun: defun within ElApp subclass.</li>
+</ul>
+<h3><a name="1.2" href="#1.2">1.2</a> <a name="label:3">[2006/03/12] 1.0.3 released</a></h3><!-- RDLabel: "[2006/03/12] 1.0.3 released" -->
+
+<ul>
+<li>Interactive specification by Proc objects</li>
+<li>.xemacs/init.el support.</li>
+<li>manpages.</li>
+</ul>
+<h3><a name="1.3" href="#1.3">1.3</a> <a name="label:4">[2005/12/11] 1.0.2 released</a></h3><!-- RDLabel: "[2005/12/11] 1.0.2 released" -->
+
+<ul>
+<li>Fixed `el4r-rctool' bug on Windows. No changes except installer.</li>
+</ul>
+<h3><a name="1.4" href="#1.4">1.4</a> <a name="label:5">[2005/12/02] 1.0.1 released</a></h3><!-- RDLabel: "[2005/12/02] 1.0.1 released" -->
+
+<ul>
+<li>Adjusted to Emacs-snapshot.</li>
+</ul>
+<h3><a name="1.5" href="#1.5">1.5</a> <a name="label:6">[2005/12/01] 1.0.0 released</a></h3><!-- RDLabel: "[2005/12/01] 1.0.0 released" -->
+
+<ul>
+<li>Installer.</li>
+<li>Packaging policy.</li>
+<li>Fixed fatal error bug.</li>
+<li>Fixed defun-GC problem.</li>
+<li>Renamed: el4r-runtest.rb -&gt; el4r-runtest</li>
+<li>New command: el4r</li>
+<li><p>New EmacsRuby functions.</p>
+<ul>
+<li>define_minor_mode</li>
+<li>define_derived_mode</li>
+<li>eval_after_load</li>
+</ul></li>
+</ul>
+<h3><a name="1.6" href="#1.6">1.6</a> <a name="label:7">[2005/10/11] 0.9.3 released</a></h3><!-- RDLabel: "[2005/10/11] 0.9.3 released" -->
+
+<ul>
+<li>el4r-runtest.rb: Raise when the test-script file is not found.</li>
+<li>Now output builtin functions (p, print, puts ...) are usable in EmacsRuby.</li>
+<li>Fixed an error-handling bug.</li>
+<li>More stable.</li>
+</ul>
+<h3><a name="1.7" href="#1.7">1.7</a> <a name="label:8">[2005/10/05] 0.9.2 released</a></h3><!-- RDLabel: "[2005/10/05] 0.9.2 released" -->
+
+<ul>
+<li>~/.el4rrc.rb contains all the el4r setting.</li>
+<li>Automatic configuration.</li>
+<li>Now el4r can be installed in arbitrary directory.</li>
+<li>A block is accepted in El4r::ELMethodsMixin#newbuf .</li>
+<li>New class: ElApp</li>
+<li>Works with Windows(WINE).</li>
+<li>Introduced el4r_load search path.</li>
+<li>New EmacsRuby library in el4r/ directory.</li>
+</ul>
+<h2><a name="2" href="#2">2</a> <a name="label:9">Requirements</a></h2><!-- RDLabel: "Requirements" -->
+
+<ul>
+<li>Ruby 1.8.2 or upper</li>
+<li>emacs21 / xemacs21</li>
+</ul>
+<p>I'm using Debian GNU/Linux.
+El4r probably works in other GNU/Linux or Unices.</p>
+<p>I have no Windows environment.
+But el4r works well with "ruby 1.8.2 (2004-12-25) [i386-mswin32]" and Meadow on <a href="http://www.winehq.com/">WINE</a>.</p>
+<p>I want feedbacks and patches.
+Please send <a href="mailto:rubikitch@ruby-lang.org?Subject=el4r">me</a> the result of the following command.</p>
+<pre>ruby bin/el4r-runtest testing/test-el4r.rb --batch -l testlog --emacs=[emacs binary name]  </pre>
+<h2><a name="3" href="#3">3</a> <a name="label:10">Download / Install / Setup</a></h2><!-- RDLabel: "Download / Install / Setup" -->
+
+<p>Since version 1.0.0, el4r introduced installer.
+If you got error when downloading, you must update Ruby.
+Here is the shell commands to download, install and setup.
+el4r-rctool setups and updates your dotfiles automatically.</p>
+<p>To update older el4r (&lt;= 0.9.1), you must remove these lines from ~/.emacs,</p>
+<pre>(add-to-list 'load-path "~/src/el4r/elisp/")
+(require 'el4r)
+(el4r-boot)</pre>
+<p>and this line from ~/.el4r/init.rb by hand.</p>
+<pre>el4r_load "el4r-mode.rb"</pre>
+<p>In newer el4r, el4r-rctool updates your dotfiles automatically.</p>
+<pre>ruby -ropen-uri -e 'URI("http://www.rubyist.net/~rubikitch/archive/el4r-1.0.4.tar.gz").read.display' &gt; el4r-1.0.4.tar.gz
+tar xzf el4r-1.0.4.tar.gz
+cd el4r-1.0.4
+ruby setup.rb
+
+ruby -S el4r-rctool -p
+ruby -S el4r-rctool -i</pre>
+<p>The diretory to put EmacsRuby scripts is ~/.el4r by default.
+The environment variable EL4R_HOME sets the directory to put EmacsRuby scripts.</p>
+<ul>
+<li><a href="http://www.rubyist.net/~rubikitch/archive/el4r-1.0.4.tar.gz">el4r-1.0.4.tar.gz</a></li>
+</ul>
+<p>Victor Borja created <a href="http://darcs.thehatcher.com/vic/erebor-ebuilds/app-emacs/">Gentoo ebuild</a>. Thanks.</p>
+<p>Boris Daix created <a href="http://alysse.dyndns.org/~bdaix/debian/">Debian package</a>. Thanks.
+Put the following to your /etc/apt/sources.list:</p>
+<pre>deb http://alysse.dyndns.org/~bdaix/debian/packages unstable/
+deb-src http://alysse.dyndns.org/~bdaix/debian/packages unstable/</pre>
+<h2><a name="4" href="#4">4</a> <a name="label:11">Start and Restart el4r</a></h2><!-- RDLabel: "Start and Restart el4r" -->
+
+<p>To start or restart el4r, type</p>
+<pre>M-x el4r-boot</pre>
+<p>in Emacs.
+After you installed el4r and restart emacs, el4r is already starting.
+You have to restart el4r when behavior becomes strange or you rewrite init.rb.</p>
+<h2><a name="5" href="#5">5</a> <a name="label:12">Programming EmacsRuby</a></h2><!-- RDLabel: "Programming EmacsRuby" -->
+
+<p>When el4r is started, ~/.el4r/init.rb is automatically evaled by the context of el4r.
+When it is the context of el4r; you can access the EmacsLisp functions and variables in addition to usual Ruby. you can define EmacsLisp functions.</p>
+<h3><a name="5.1" href="#5.1">5.1</a> <a name="label:13">Loading an EmacsRuby script</a></h3><!-- RDLabel: "Loading an EmacsRuby script" -->
+
+<p>The <code>el4r_load</code> method reads an EmacsRuby script in an argument in context of el4r.
+el4r_load's default search path is ~/.el4r -&gt; ~/.el4r/site -&gt; $el4r_root/el4r .
+External EmacsRuby scripts are installed in ~/.el4r/site .</p>
+<p>Of course normal `load' is usable, too. 
+In this case `load' read a script as a normal Ruby library not in context of el4r. 
+In el4r, ~/.el4r (the directory specified in environment variable EL4R_HOME) is included in $: ($LOAD_PATH).</p>
+<h3><a name="5.2" href="#5.2">5.2</a> <a name="label:14">Converting names</a></h3><!-- RDLabel: "Converting names" -->
+
+<p>There is a difference in the custom of how to name the name in Ruby and EmacsLisp. </p>
+<p>In Ruby "_" is usually used as an end of a word while in EmacsLisp "-" is.
+Therefore to specify a function / a variable of EmacsLisp side in Ruby, el4r substitute "-" for "_".</p>
+<p>Example:</p>
+<pre>find_file -&gt; find-file</pre>
+<p>In addition, a letter set to be able to use for a function name, a variable name and a symbol name is different from Ruby in EmacsLisp. 
+EmacsLisp can use a letter of many kinds. 
+That is, the thing which cannot be expressed in Ruby comes out.
+Don't worry. 
+In this case it can be specified by String.</p>
+<p>Example:</p>
+<pre># call `se/make-summary-buffer' function
+funcall("se/make-summary-buffer")</pre>
+<h3><a name="5.3" href="#5.3">5.3</a> <a name="label:15">Accessing EmacsLisp variables</a></h3><!-- RDLabel: "Accessing EmacsLisp variables" -->
+
+<p>To access an EmacsLisp variable you can use <code>elvar</code> object. 
+This object is like Struct.</p>
+<p>Example:</p>
+<pre>elvar.a_string = "Hello"            # (setq a-string "Hello")
+elvar["a-string"] = "Hi"            # (setq a-string "Hi")
+elvar["*an/odd+variable!*"] = 10    # (setq *an/odd+variable!* 10)</pre>
+<h3><a name="5.4" href="#5.4">5.4</a> <a name="label:16">Calling EmacsLisp functions</a></h3><!-- RDLabel: "Calling EmacsLisp functions" -->
+
+<p>An el4r object calls a function of EmacsLisp when calling a method the object do not know(method_missing).</p>
+<p>Example:</p>
+<pre>buffer_string             # (buffer-string)
+find_file("~/.emacs")     # (find-file "~/.emacs")
+funcall("1+1")            # (1+1)</pre>
+<h3><a name="5.5" href="#5.5">5.5</a> <a name="label:17">Defining EmacsLisp functions</a></h3><!-- RDLabel: "Defining EmacsLisp functions" -->
+
+<p>EmacsRuby can define an EmacsLisp function.</p>
+<p>The function's arguments are the iterator's arguments.</p>
+<p>Example:</p>
+<pre>defun(:my_command2,
+      :interactive =&gt; "d", :docstring =&gt; "description...") { |point|
+  insert_string("Current point is #{point}."); newline
+}</pre>
+<p>A Proc object can be specified to attribute `interactive'.
+It must return Array or List(EmacsLisp) in this case.</p>
+<p>Example:</p>
+<pre>interactive_proc = lambda { [1+1, 1] }
+defun(:my_command3,
+      :interactive =&gt; interactive_proc) { |a, b|
+  sum = a + b
+}</pre>
+<h3><a name="5.6" href="#5.6">5.6</a> <a name="label:18">Calling special forms</a></h3><!-- RDLabel: "Calling special forms" -->
+
+<p>The way to call Special Form like save-excursion and with-current-buffer is a little special. </p>
+<p><code>with(function_name, arguments) {...}</code></p>
+<p>Example:</p>
+<pre>with(:save_excursion) do
+  goto_char 1
+  re_search_forward('^\\(.+\\)$')
+end
+match_string 1</pre>
+<h3><a name="5.7" href="#5.7">5.7</a> <a name="label:19">Calling defun-type macros</a></h3><!-- RDLabel: "Calling defun-type macros" -->
+
+<p>Calling defun-type macro (such as `define-minor-mode' and `define-derived-mode') by `with' is bad, because the function body is GCed.
+To deal with this problem,  el4r defines `define_minor_mode' and `define_derived_mode'.
+To define defun-type macro in el4r, use `with_preserved_block'.</p>
+<p>Example:</p>
+<pre>define_derived_mode(:foo_mode, :fundamental_mode, "FOO", "doc") do
+  @passed = true
+end
+
+define_minor_mode(:a_minor_mode, "test minor mode") do
+  @passed = true
+end</pre>
+<h3><a name="5.8" href="#5.8">5.8</a> <a name="label:20">Defining advices</a></h3><!-- RDLabel: "Defining advices" -->
+
+<p>El4r can define an EmacsLisp advice by using <code>defadvice</code>.</p>
+<p>Example:</p>
+<pre># define a function
+defun(:adtest3){ 1 }
+# now define an advice
+defadvice(:adtest3, :around, :adv3, :activate,
+          :docstring=&gt;"test advice", :interactive=&gt;true) {
+  ad_do_it
+  elvar.ad_return_value = 2
+}</pre>
+<h3><a name="5.9" href="#5.9">5.9</a> <a name="label:21">Output builtin functions</a></h3><!-- RDLabel: "Output builtin functions" -->
+
+<p>The output of output builtin functions (p, print, printf ...) are inserted into *el4r:output* buffer.
+This feature is useful for debug.</p>
+<p>Internally, <code>$&gt;</code> is an El4r::El4rOutput object in EmacsRuby.
+El4r::El4rOutput#write inserts a string into *el4r:output* buffer.
+Output builtin functions always call <code>write</code>.</p>
+<h3><a name="5.10" href="#5.10">5.10</a> <a name="label:22">Using Emacs features in user-defined Class and Module.</a></h3><!-- RDLabel: "Using Emacs features in user-defined Class and Module." -->
+
+<p>You might want to do object oriented programming to one of the reasons to introduce EmacsRuby. 
+First of all, it is a class definition as for object oriented programming. 
+Because a user-defined class is not a context of el4r, you might not be able to call EmacsLisp?
+It worries and is useless. </p>
+<p>In a user-defined class or module, the following statement enables you to call EmacsLisp.</p>
+<pre>include ElMixin</pre>
+<p>ElApp class is a Class version of ElMixin.
+You can pass a Hash parameter to ElApp.</p>
+<h3><a name="5.11" href="#5.11">5.11</a> <a name="label:23">Sample of ElApp</a></h3><!-- RDLabel: "Sample of ElApp" -->
+
+<p>In older version of el4r, you must defun in a instance method of ElApp's subclass.</p>
+<pre>class Foo &lt; ElApp
+  def initialize(x)
+    elvar.v = x[:value]
+    defun(:twice_v) do
+      elvar.v *= 2
+    end
+
+    defun(:str0) do
+      do_str0 x[:str]
+    end
+  end
+
+  def do_str0(str)
+    (str*2).capitalize
+  end
+end</pre>
+<h3><a name="5.12" href="#5.12">5.12</a> <a name="label:24">Sample of ElApp (smart defun)</a></h3><!-- RDLabel: "Sample of ElApp (smart defun)" -->
+
+<p>Since version 1.0.4, you can directly defun in ElApp's subclass.</p>
+<pre>class SmartDefunSample &lt; ElApp
+  def my_square(x)
+    x*x
+  end
+
+  defun(:testdefun, :interactive=&gt;true) do |x|
+    # This block is evaluated within a context of the SmartDefunSample INSTANCE.
+    # Not a context of the SmartDefunSample class!!
+    x ||= 16
+    elvar.val = my_square(x)  # call an instance method.
+  end
+end</pre>
+<h2><a name="6" href="#6">6</a> <a name="label:25">Making regression tests with Test::Unit</a></h2><!-- RDLabel: "Making regression tests with Test::Unit" -->
+
+<p>There is a strong test environment named Test::Unit in one of the big advantages to use Ruby. 
+The test program of EmacsLisp/EmacsRuby should independently start up Emacs. 
+Because the operation of Emacs may influence the entire Emacs session, the malfunctioned test program can destroy the edit environment at the worst.
+Another Emacs session for the test enables you to test at ease because there is no adverse effect in the edit environment even though an accident happens there.
+I prepared a mini environment for the test for such reasons.</p>
+<p>el4r-runtest newly starts up Emacs, tests with Test::Unit(RUNIT), and displays the result. </p>
+<ul>
+<li>With <code>--batch</code> option, after the test is executed it ends immediately. (emacs -batch)</li>
+<li>El4r version of <code>Test::Unit::TestCase</code> includes and extends <code>ElMixin</code>. So the el4r methods and the EmacsLisp functions can be called in <code>Test::Unit::TestCase</code> class. </li>
+<li>Because it is a mini environment, the key operation has been simplified.</li>
+<li>You can exit it also with <kbd>q</kbd> and <kbd>M-k</kbd> in addition to <kbd>C-x C-c</kbd>.</li>
+<li>The test can be executed with <kbd>C-c</kbd> again. </li>
+<li>The log is displayed with <kbd>l</kbd> or <kbd>C-l</kbd>. </li>
+<li>It scrolls by <kbd>SPACE</kbd> and <kbd>b</kbd>. </li>
+<li>Any configuration files of Emacs is not read (--no-init-file,--no-site-file). </li>
+<li>It doesn't read ~/.el4r/init.rb. </li>
+<li>Please load the EmacsLisp file that should be loaded on the test script side. </li>
+</ul>
+<p>The test class concretely becomes such feeling. 
+<code>el_require</code> and <code>el_load</code> can be used for the part of <code>el4r_lisp_eval</code>. </p>
+<pre>require 'test/unit'
+class TestXXXX &lt; Test::Unit::TestCase
+  el4r_lisp_eval %((progn
+    some initialization
+  ))
+
+  def setup
+    #
+  end
+
+  def teardown
+    #
+  end
+
+  def test_xxxx
+    #
+  end
+end</pre>
+<h3><a name="6.1" href="#6.1">6.1</a> <a name="label:26">Command line options</a></h3><!-- RDLabel: "Command line options" -->
+
+<pre>Usage: el4r-runtest [options] file
+    -Q, --init                       load site-start.el and .emacs
+    -b, --batch                      batch mode
+    -i                               interactive mode
+    -e, --emacs=EMACS                set emacs binary [default: ]
+        --ruby=RUBY                  set ruby binary [default: ]
+    -I load-path                     set load-path
+    -r, --el4r-root=DIR              el4r package root directory [for debug]
+    -n, --name=NAME                  Runs tests matching NAME.
+                                     (patterns may be used).
+    -t, --testcase=TESTCASE          Runs tests in TestCases matching TESTCASE.
+                                     (patterns may be used).
+    -v                               verbose output
+        --nw                         don't communicate with X, ignoring $DISPLAY
+                                     (emacs -nw)
+    -d, --debug                      debug output
+    -l, --log=LOGFILE                Specify a log file.
+        --show                       Show the test information only, for diagnosis.</pre>
+<p><code>--batch</code> and <code>--nw</code> are the options of Emacs. 
+<code>-n</code> and <code>-t</code> are the options of Test::Unit. 
+With <code>-d</code> the backtraces contains the line of el4r-instance.</p>
+<h2><a name="7" href="#7">7</a> <a name="label:27">The `el4r' command</a></h2><!-- RDLabel: "The `el4r' command" -->
+
+<p>`el4r' command invokes a new Emacs and execute the EmacsRuby script specified.
+The usage is almost the same as `el4r-runtest'.</p>
+<pre>Usage: el4r [options] file
+    -Q, --init                       load site-start.el and .emacs
+    -b, --batch                      batch mode
+    -i                               interactive mode
+    -e, --emacs=EMACS                set emacs binary [default: ]
+        --ruby=RUBY                  set ruby binary [default: ]
+    -I load-path                     set load-path
+    -r, --el4r-root=DIR              el4r package root directory [for debug]
+        --nw                         don't communicate with X, ignoring $DISPLAY
+                                     (emacs -nw)
+    -d, --debug                      debug output
+    -l, --log=LOGFILE                Specify a log file.
+        --show                       Show the test information only, for diagnosis.</pre>
+<h2><a name="8" href="#8">8</a> <a name="label:28">EmacsRuby API Reference</a></h2><!-- RDLabel: "EmacsRuby API Reference" -->
+
+<p>Please look at the RDoc documents in doc/.</p>
+<h2><a name="9" href="#9">9</a> <a name="label:29">Accessing Ruby from EmacsLisp</a></h2><!-- RDLabel: "Accessing Ruby from EmacsLisp" -->
+
+<p>El4r also enables EmacsLisp to access Ruby.
+The <code>el4r-ruby-eval</code> function is used in the EmacsLisp program to access Ruby. 
+The only argument is Ruby expression to evaluate. 
+However, it is wise to make it see from EmacsLisp by <code>defun</code> and <code>elvar</code> when you want to use the program in EmacsRuby.</p>
+<p>To access EmacsRuby interactively. Please type</p>
+<pre>M-x el4r-ruby-eval-prompt</pre>
+<p>To evaluate the EmacsRuby type of the entire buffer. Please type</p>
+<pre>M-x el4r-ruby-eval-buffer</pre>
+<p>In the region. Please type</p>
+<pre>M-x el4r-ruby-eval-region</pre>
+<p>Moreover, when examples/el4r-mode.rb is loaded (It is loaded by initialization), the *ruby-scratch* buffer is made. 
+Like the *scratch* buffer enter an EmacsRuby expression and it is evaled by typing <kbd>C-j</kbd>. </p>
+<h2><a name="10" href="#10">10</a> <a name="label:30">Examples</a></h2><!-- RDLabel: "Examples" -->
+
+<p>Please look at examples/el4r-mode.rb about the example of making major-mode in EmacsRuby. </p>
+<p>Please look at testing/test-el4r.rb about the use example of each method. 
+The test program is specifications. 
+A correct usage and the value that should be expected, etc. it talks about many. </p>
+<h2><a name="11" href="#11">11</a> <a name="label:31">Packaging EmacsRuby scripts</a></h2><!-- RDLabel: "Packaging EmacsRuby scripts" -->
+
+<h3><a name="11.1" href="#11.1">11.1</a> <a name="label:32">Directory Structure</a></h3><!-- RDLabel: "Directory Structure" -->
+
+<p>El4r and EmacsRuby scripts can be installd system-widely since version 1.0.0.
+Here is the directory structure if you use Ruby 1.8.</p>
+<pre>site_ruby/1.8/el4r/                    # normal libraries used by el4r
+site_ruby/1.8/el4r/emacsruby/          # EmacsRuby scripts
+site_ruby/1.8/el4r/emacsruby/autoload/ # EmacsRuby scripts executed when el4r starts</pre>
+<p>Normal libraries are loaded by `load' / `requre' normally.
+EmacsRuby scripts are loaded by `el4r_load'.</p>
+<h3><a name="11.2" href="#11.2">11.2</a> <a name="label:33">The `autoload' Directory</a></h3><!-- RDLabel: "The `autoload' Directory" -->
+
+<p>EmacsRuby scripts in `autoload' directory are automatically executed when el4r starts.
+This directory is used to initialize EmacsRuby scripts.</p>
+<p>To use autoload feature file name must begin from two digits.</p>
+<pre>00init.rb
+50langhelp.rb
+70el4r-mode.rb  </pre>
+<p>If you locate these files, these are loaded ascending order.</p>
+<p>This operation is almost the same as Debian Emacs policy.</p>
+<h3><a name="11.3" href="#11.3">11.3</a> <a name="label:34">Packaging with `setup.rb'</a></h3><!-- RDLabel: "Packaging with `setup.rb'" -->
+
+<p><a href="http://i.loveruby.net/en/projects/setup/">setup.rb</a> ease packaging EmacsRuby scripts.
+If you distribute EmacsRuby scripts, layout files as below.</p>
+<pre>bin/                         # executables
+lib/el4r/                    # normal libraries used by el4r
+lib/el4r/emacsruby/          # EmacsRuby scripts
+lib/el4r/emacsruby/autoload/ # EmacsRuby scripts executed when el4r starts
+ext/                         # Ruby extensions
+data/                        # data</pre>
+<p>`el4r-mode.rb' and <a href="http://www.rubyist.net/~rubikitch/computer/langhelp/">langhelp</a> are packaged in this methodology.</p>
+<h2><a name="12" href="#12">12</a> <a name="label:35">Link</a></h2><!-- RDLabel: "Link" -->
+
+<ul>
+<li><a href="http://pymacs.progiciels-bpi.ca/">Pymacs(so to speak EmacsPython)</a></li>
+<li><a href="http://www.rubyist.net/~rubikitch/computer/langhelp/">langhelp(Integrated help system in EmacsRuby)</a></li>
+</ul>
+
+</body>
+</html>

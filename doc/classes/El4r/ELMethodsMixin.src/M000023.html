@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>let (El4r::ELMethodsMixin)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File bin/el4r-instance, line 360</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">let</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">name_and_value_list</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      (<span class="ruby-identifier">name_and_value_list</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword kw">or</span>
+        <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Invalid count of arguments.&quot;</span>)
+
+      <span class="ruby-identifier">letexpr</span> = <span class="ruby-value str">&quot;(let (&quot;</span>
+      <span class="ruby-keyword kw">until</span> <span class="ruby-identifier">name_and_value_list</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">name</span> = <span class="ruby-constant">El4r</span>.<span class="ruby-identifier">name_rb2el</span>(<span class="ruby-identifier">name_and_value_list</span>.<span class="ruby-identifier">shift</span>.<span class="ruby-identifier">to_s</span>)
+        <span class="ruby-identifier">value</span> = <span class="ruby-identifier">el4r_ruby2lisp</span>(<span class="ruby-identifier">name_and_value_list</span>.<span class="ruby-identifier">shift</span>)
+        <span class="ruby-identifier">letexpr</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;(#{name} #{value}) &quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">letexpr</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;) (funcall #{el4r_rubyproc_to_lambda(&amp;block)}))&quot;</span>
+      <span class="ruby-identifier">el4r_lisp_eval</span>(<span class="ruby-identifier">letexpr</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

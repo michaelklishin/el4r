@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>newbuf (El4r::ELMethodsMixin)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File bin/el4r-instance, line 387</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">newbuf</span>(<span class="ruby-identifier">x</span>)
+      <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">x</span>            <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;argument must be a hash!&quot;</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:file</span>]  <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;`:name' or `:file' key is mandatory!&quot;</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:name</span>]              <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">b</span> = <span class="ruby-identifier">get_buffer_create</span>(<span class="ruby-identifier">x</span>[<span class="ruby-identifier">:name</span>])
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:file</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">x</span>[<span class="ruby-identifier">:name</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">b</span> = <span class="ruby-identifier">find_file_noselect</span>(<span class="ruby-identifier">x</span>[<span class="ruby-identifier">:file</span>])
+
+      <span class="ruby-identifier">check</span> = <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>  <span class="ruby-identifier">x</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">type</span><span class="ruby-operator">===</span><span class="ruby-identifier">x</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>) }
+      <span class="ruby-identifier">with</span>(<span class="ruby-identifier">:with_current_buffer</span>, <span class="ruby-identifier">b</span>) {
+        <span class="ruby-identifier">elvar</span>.<span class="ruby-identifier">buffer_read_only</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-comment cmt"># TODO: coding-system</span>
+        <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:name</span>]              <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">erase_buffer</span>
+        <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:name</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:file</span>]  <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">insert_file_contents</span>(<span class="ruby-identifier">x</span>[<span class="ruby-identifier">:file</span>])
+        <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:contents</span>]          <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">insert</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:contents</span>].<span class="ruby-identifier">to_s</span> 
+        <span class="ruby-identifier">check</span>[<span class="ruby-identifier">:line</span>,<span class="ruby-constant">Integer</span>]  <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">goto_line</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:line</span>]
+        <span class="ruby-identifier">check</span>[<span class="ruby-identifier">:point</span>,<span class="ruby-constant">Integer</span>] <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">goto_char</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:point</span>]
+        <span class="ruby-identifier">block_given?</span>          <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">yield</span>
+        <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:read_only</span>]         <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">elvar</span>.<span class="ruby-identifier">buffer_read_only</span> = <span class="ruby-keyword kw">true</span>
+      }
+
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:display</span>]
+      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:pop</span>;  <span class="ruby-identifier">pop_to_buffer</span> <span class="ruby-identifier">b</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:only</span>; <span class="ruby-identifier">delete_other_windows</span>; <span class="ruby-identifier">switch_to_buffer</span> <span class="ruby-identifier">b</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">true</span>;  <span class="ruby-identifier">display_buffer</span> <span class="ruby-identifier">b</span>
+      <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:bury</span>]     <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">bury_buffer</span> <span class="ruby-identifier">b</span>
+      <span class="ruby-identifier">x</span>[<span class="ruby-identifier">:current</span>]  <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">set_buffer</span> <span class="ruby-identifier">b</span>
+
+      <span class="ruby-identifier">b</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

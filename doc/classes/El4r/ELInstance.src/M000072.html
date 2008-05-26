@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>el4r_boot__noinit (El4r::ELInstance)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File bin/el4r-instance, line 711</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">el4r_boot__noinit</span>
+      <span class="ruby-identifier">logbuf</span> = <span class="ruby-identifier">get_buffer_create</span> <span class="ruby-identifier">conf</span>.<span class="ruby-identifier">log_buffer</span>
+      <span class="ruby-identifier">elvar</span>.<span class="ruby-identifier">el4r_log_path</span> = <span class="ruby-identifier">el4r_log_io</span>.<span class="ruby-identifier">path</span>
+      
+      <span class="ruby-identifier">el4r_lisp_eval</span>(<span class="ruby-value str">'(defun el4r-show-log () (interactive)
+                       (with-current-buffer (get-buffer-create el4r-log-buffer)
+                         (setq buffer-read-only nil)
+                         (erase-buffer)
+                         (insert-file-contents el4r-log-path)
+                         (setq buffer-read-only t)
+                         (goto-char (point-max))
+                         (pop-to-buffer (current-buffer))))'</span>)
+      <span class="ruby-identifier">el4r_install_builtin_functions</span>
+      <span class="ruby-identifier">$&gt;</span> = <span class="ruby-ivar">@el4r_output</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

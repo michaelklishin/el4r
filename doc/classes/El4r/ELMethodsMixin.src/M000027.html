@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>defadvice (El4r::ELMethodsMixin)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File bin/el4r-instance, line 434</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">defadvice</span>(<span class="ruby-identifier">func</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">-1</span>]  <span class="ruby-keyword kw">and</span>  <span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>
+
+      <span class="ruby-identifier">param</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-constant">El4r</span>.<span class="ruby-identifier">name_rb2el</span>(<span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>)}.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+      <span class="ruby-identifier">forms</span> =  <span class="ruby-node">&quot;#{El4r.name_rb2el(func.to_s)} (#{param})\n&quot;</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">attrs</span>
+        <span class="ruby-identifier">_handle_attrs</span> <span class="ruby-identifier">attrs</span>, <span class="ruby-identifier">forms</span>, <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">forms</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;(setq --defadvice-ad-do-it-- (lambda () ad-do-it))\n&quot;</span>
+      <span class="ruby-identifier">with</span>(<span class="ruby-identifier">:defadvice</span>, <span class="ruby-identifier">el</span>(<span class="ruby-identifier">forms</span>), <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

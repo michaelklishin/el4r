@@ -1,0 +1,2412 @@
+------------------------------------------------------------------------
+r1380 | rubikitch | 2006-09-21 16:23:15 +0900 (Thu, 21 Sep 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+
+release 1.0.4
+
+------------------------------------------------------------------------
+r1378 | rubikitch | 2006-09-21 16:18:26 +0900 (Thu, 21 Sep 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/makepkgrc
+
+release 1.0.4
+
+------------------------------------------------------------------------
+r1377 | rubikitch | 2006-09-21 14:50:38 +0900 (Thu, 21 Sep 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-gc.rb
+
+correct test case
+
+------------------------------------------------------------------------
+r1376 | rubikitch | 2006-09-21 14:50:24 +0900 (Thu, 21 Sep 2006) | 1 line
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/makepkgrc
+
+
+------------------------------------------------------------------------
+r1333 | rubikitch | 2006-08-15 21:10:13 +0900 (Tue, 15 Aug 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+refactored
+
+------------------------------------------------------------------------
+r1332 | rubikitch | 2006-08-15 20:36:01 +0900 (Tue, 15 Aug 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+ElApp.import_function
+
+------------------------------------------------------------------------
+r1328 | rubikitch | 2006-08-15 06:10:57 +0900 (Tue, 15 Aug 2006) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+el4r_lisp_eval can be used within ElApp's subclass.
+$el is now obsolete.
+
+------------------------------------------------------------------------
+r1327 | rubikitch | 2006-08-15 05:49:36 +0900 (Tue, 15 Aug 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+defvar
+
+------------------------------------------------------------------------
+r1326 | rubikitch | 2006-08-15 04:59:20 +0900 (Tue, 15 Aug 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+
+update docs: ElApp, smart defun
+
+------------------------------------------------------------------------
+r1325 | rubikitch | 2006-08-15 04:47:47 +0900 (Tue, 15 Aug 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+implemented smart defun.
+
+------------------------------------------------------------------------
+r1324 | rubikitch | 2006-08-15 04:23:28 +0900 (Tue, 15 Aug 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+task testbase (test-el4r.rb only)
+
+------------------------------------------------------------------------
+r1281 | rubikitch | 2006-06-24 17:33:29 +0900 (Sat, 24 Jun 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+fixed for debian
+
+------------------------------------------------------------------------
+r1280 | rubikitch | 2006-06-24 17:33:17 +0900 (Sat, 24 Jun 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+adjusted to emacs22 (suppress warning, adaptive??)
+
+------------------------------------------------------------------------
+r1229 | rubikitch | 2006-03-12 12:00:52 +0900 (Sun, 12 Mar 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/files
+   M /el4r/trunk/makepkgrc
+
+Release 1.0.3
+
+------------------------------------------------------------------------
+r1215 | rubikitch | 2006-02-24 02:40:42 +0900 (Fri, 24 Feb 2006) | 1 line
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+   M /el4r/trunk/testing/test-gc.rb
+
+
+------------------------------------------------------------------------
+r1214 | rubikitch | 2006-02-24 02:30:37 +0900 (Fri, 24 Feb 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+   M /el4r/trunk/testing/test-gc.rb
+
+fixed interactive/lambda GC bug
+
+------------------------------------------------------------------------
+r1206 | rubikitch | 2006-02-22 06:57:07 +0900 (Wed, 22 Feb 2006) | 2 lines
+Changed paths:
+   A /el4r/trunk/man
+   A /el4r/trunk/man/el4r.rd.r
+
+added manpage
+
+------------------------------------------------------------------------
+r1172 | rubikitch | 2006-02-03 08:34:17 +0900 (Fri, 03 Feb 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+clear *el4r:process* buffer before re-booting
+
+------------------------------------------------------------------------
+r1157 | rubikitch | 2006-01-31 15:20:49 +0900 (Tue, 31 Jan 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+eval-after-load and GC bugfix
+
+------------------------------------------------------------------------
+r1156 | rubikitch | 2006-01-31 15:17:34 +0900 (Tue, 31 Jan 2006) | 1 line
+Changed paths:
+   M /el4r/trunk/testing/el4r.e
+   M /el4r/trunk/testing/test-el4r.rb
+
+
+------------------------------------------------------------------------
+r1154 | rubikitch | 2006-01-30 09:59:54 +0900 (Mon, 30 Jan 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/testing/test-el4r.rb
+
+interactive specification by Proc objects
+
+------------------------------------------------------------------------
+r1152 | rubikitch | 2006-01-30 01:13:23 +0900 (Mon, 30 Jan 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+el4r-rctool.rb: modify .xemacs/init.el if it exists
+
+------------------------------------------------------------------------
+r1140 | rubikitch | 2006-01-19 10:19:28 +0900 (Thu, 19 Jan 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+el4r-instance process: use a pipe
+
+------------------------------------------------------------------------
+r1139 | rubikitch | 2006-01-19 10:18:59 +0900 (Thu, 19 Jan 2006) | 1 line
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+
+------------------------------------------------------------------------
+r1138 | rubikitch | 2006-01-19 10:18:56 +0900 (Thu, 19 Jan 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+task :benchmark
+
+------------------------------------------------------------------------
+r1137 | rubikitch | 2006-01-18 22:01:12 +0900 (Wed, 18 Jan 2006) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+defadvice: symbol name bugfix
+unittest: refactored
+
+------------------------------------------------------------------------
+r1108 | rubikitch | 2006-01-10 09:55:14 +0900 (Tue, 10 Jan 2006) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+defadvice: function name bug fix
+
+------------------------------------------------------------------------
+r1103 | rubikitch | 2005-12-29 14:07:45 +0900 (Thu, 29 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+
+doc: added download links, gentoo ebuilds
+
+------------------------------------------------------------------------
+r1038 | rubikitch | 2005-12-10 23:41:40 +0900 (Sat, 10 Dec 2005) | 1 line
+Changed paths:
+   M /el4r/trunk/svnmemo.txt
+
+
+------------------------------------------------------------------------
+r1037 | rubikitch | 2005-12-10 23:41:16 +0900 (Sat, 10 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/install0.r
+   M /el4r/trunk/makepkgrc
+
+Release 1.0.2
+
+------------------------------------------------------------------------
+r1022 | rubikitch | 2005-12-10 08:52:14 +0900 (Sat, 10 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+user = ENV['USER'] || ENV['USERNAME'] || 'me'
+
+------------------------------------------------------------------------
+r1017 | rubikitch | 2005-12-09 10:00:19 +0900 (Fri, 09 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-gc.rb
+
+corrected testcase
+
+------------------------------------------------------------------------
+r999 | rubikitch | 2005-12-03 02:11:05 +0900 (Sat, 03 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+bin/el4r-instance: define El4r::El4rOutput#flush to adjust to ruby1.9
+
+------------------------------------------------------------------------
+r995 | rubikitch | 2005-12-02 12:58:54 +0900 (Fri, 02 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/makepkgrc
+   M /el4r/trunk/testing/el4r.e
+
+release 1.0.1
+
+------------------------------------------------------------------------
+r994 | rubikitch | 2005-12-02 06:33:51 +0900 (Fri, 02 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+data/emacs/site-lisp/el4r.el: defalias -> fset
+
+------------------------------------------------------------------------
+r993 | rubikitch | 2005-12-02 03:38:30 +0900 (Fri, 02 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+data/emacs/site-lisp/el4r.el: define-function -> defalias  (define-function is not defined in CVS emacs)
+
+------------------------------------------------------------------------
+r968 | rubikitch | 2005-12-01 05:08:03 +0900 (Thu, 01 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+release 1.0.0 (fixed 2)
+
+------------------------------------------------------------------------
+r963 | rubikitch | 2005-12-01 04:44:53 +0900 (Thu, 01 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/install0.r
+
+release 1.0.0 (fixed)
+
+------------------------------------------------------------------------
+r959 | rubikitch | 2005-12-01 04:32:21 +0900 (Thu, 01 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/makepkgrc
+
+release 1.0.0
+
+------------------------------------------------------------------------
+r958 | rubikitch | 2005-12-01 04:17:42 +0900 (Thu, 01 Dec 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/lib/el4r/exec-el4r.rb
+
+lib/el4r/exec-el4r.rb:
+(define-key global-map "\C-x\C-c" 'instantly-kill-emacs)
+
+------------------------------------------------------------------------
+r957 | rubikitch | 2005-12-01 04:07:04 +0900 (Thu, 01 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+   M /el4r/trunk/lib/el4r/emacsruby/autoload/70el4r-mode.rb
+   M /el4r/trunk/testing/el4r.e
+
+`el4r-mode.rb' is not loaded if you do not install `ruby-mode.el'
+
+------------------------------------------------------------------------
+r956 | rubikitch | 2005-12-01 03:56:37 +0900 (Thu, 01 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+bin/el4r-instance: ElApp @@instances holds all ElApp object to preserve from GC
+
+------------------------------------------------------------------------
+r955 | rubikitch | 2005-12-01 03:49:31 +0900 (Thu, 01 Dec 2005) | 1 line
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+
+------------------------------------------------------------------------
+r954 | rubikitch | 2005-12-01 03:49:07 +0900 (Thu, 01 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+
+updated documents
+
+------------------------------------------------------------------------
+r953 | rubikitch | 2005-12-01 02:47:46 +0900 (Thu, 01 Dec 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/files
+   M /el4r/trunk/testing/el4r.e
+   M /el4r/trunk/testing/test-el4r.rb
+
+refactored define-derived-mode / define-minor-mode
+
+------------------------------------------------------------------------
+r938 | rubikitch | 2005-11-27 22:51:27 +0900 (Sun, 27 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+el4r-rctool.rb: Use installed version of el4r-instance/el4r.el.
+
+------------------------------------------------------------------------
+r937 | rubikitch | 2005-11-27 22:50:15 +0900 (Sun, 27 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+   M /el4r/trunk/testing/test-el4r.rb
+
+ELConsCell support
+
+------------------------------------------------------------------------
+r935 | rubikitch | 2005-11-27 02:27:09 +0900 (Sun, 27 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+protect defuns from EmacsLisp GC (hash -> list)
+
+------------------------------------------------------------------------
+r933 | rubikitch | 2005-11-26 22:28:45 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+   M /el4r/trunk/testing/test-el4r.rb
+
+protect defuns from EmacsLisp GC
+
+------------------------------------------------------------------------
+r932 | rubikitch | 2005-11-26 22:21:09 +0900 (Sat, 26 Nov 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+EmacsLisp define-derived-mode bugfix
+ElApp @@instance is a Hash now.
+
+------------------------------------------------------------------------
+r931 | rubikitch | 2005-11-26 21:58:06 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+EmacsLisp define-minor-mode
+
+------------------------------------------------------------------------
+r930 | rubikitch | 2005-11-26 21:47:12 +0900 (Sat, 26 Nov 2005) | 1 line
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+
+------------------------------------------------------------------------
+r929 | rubikitch | 2005-11-26 21:46:56 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+EmacsLisp define-derived-mode
+
+------------------------------------------------------------------------
+r928 | rubikitch | 2005-11-26 12:10:49 +0900 (Sat, 26 Nov 2005) | 1 line
+Changed paths:
+   M /el4r/trunk/testing/el4r.e
+
+*** empty log message ***
+------------------------------------------------------------------------
+r927 | rubikitch | 2005-11-26 02:18:10 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+el4r-rctool.rb: removed @root_dir
+
+------------------------------------------------------------------------
+r926 | rubikitch | 2005-11-26 02:17:41 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/lib/el4r/exec-el4r.rb
+
+lib/el4r/exec-el4r.rb: -r bug fix
+
+------------------------------------------------------------------------
+r925 | rubikitch | 2005-11-26 02:17:27 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/makepkgrc
+
+makepkgrc: files
+
+------------------------------------------------------------------------
+r924 | rubikitch | 2005-11-26 02:06:22 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/lib/el4r/exec-el4r.rb
+
+lib/el4r/exec-el4r.rb: use ENV['EL4R_ROOT']
+
+------------------------------------------------------------------------
+r923 | rubikitch | 2005-11-26 02:00:20 +0900 (Sat, 26 Nov 2005) | 5 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+Rakefile:
+-    sh 'wineruby -Ilib c:/.el4rrc.rb'
++    sh 'wineruby  c:/.el4rrc.rb'
+The same command-line as el4r.el executes.
+
+------------------------------------------------------------------------
+r922 | rubikitch | 2005-11-26 01:42:38 +0900 (Sat, 26 Nov 2005) | 6 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+bin/el4r-instance:
+El4r::ELRubyObjectStock#pre_gc_hook
+El4r::ELRubyObjectStock#post_gc_hook
+
+unittest-mode is now major-mode.
+
+------------------------------------------------------------------------
+r921 | rubikitch | 2005-11-26 01:39:59 +0900 (Sat, 26 Nov 2005) | 5 lines
+Changed paths:
+   M /el4r/trunk/lib/el4r/exec-el4r.rb
+
+lib/el4r/exec-el4r.rb:
+new option -Q
+unittest-mode is now major-mode.
+do not remove testrun.el.
+
+------------------------------------------------------------------------
+r920 | rubikitch | 2005-11-26 01:38:27 +0900 (Sat, 26 Nov 2005) | 5 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+el4r-rctool.rb:
+$: << $EL4R_ROOT/lib  if ENV['EL4R_ROOT']
+(__elisp_init__) remove ConfigScript dependency
+(.emacs) fixed load-path
+
+------------------------------------------------------------------------
+r919 | rubikitch | 2005-11-26 01:30:40 +0900 (Sat, 26 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/el4r.e
+
+testing/el4r.e: added Local Variables
+
+------------------------------------------------------------------------
+r918 | rubikitch | 2005-11-26 01:29:04 +0900 (Sat, 26 Nov 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+Rakefile: ENV -> $env (to output message)
+task :testwin fixed
+
+------------------------------------------------------------------------
+r917 | rubikitch | 2005-11-25 22:49:34 +0900 (Fri, 25 Nov 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+Rakefile: wine ruby -> wineruby
+task :testwin : Stop to remove ~/c/src/el4r ~/c/.el4rrc.rb
+
+------------------------------------------------------------------------
+r916 | rubikitch | 2005-11-25 04:37:37 +0900 (Fri, 25 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/data/emacs/site-lisp/el4r.el
+
+data/emacs/site-lisp/el4r.el: avoid fatal error when GC
+
+------------------------------------------------------------------------
+r857 | rubikitch | 2005-11-16 18:45:52 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/lib/el4r/emacsruby/autoload/70el4r-mode.rb
+
+use after-init-hook to resolve ruby-mode.el dependency.
+
+------------------------------------------------------------------------
+r856 | rubikitch | 2005-11-16 18:44:56 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/testing/el4r.e
+
+added testing/el4r.e
+
+------------------------------------------------------------------------
+r853 | rubikitch | 2005-11-16 07:31:32 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/files
+
+added files
+
+------------------------------------------------------------------------
+r852 | rubikitch | 2005-11-16 04:38:07 +0900 (Wed, 16 Nov 2005) | 1 line
+Changed paths:
+   M /el4r/trunk/bin/el4r
+   M /el4r/trunk/bin/el4r-runtest
+
+
+------------------------------------------------------------------------
+r851 | rubikitch | 2005-11-16 04:35:02 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   A /el4r/trunk/bin/el4r
+   A /el4r/trunk/bin/el4r-runtest
+
+lib/el4r/exec-el4r.rb -> { bin/el4r-runtest, bin/el4r }
+
+------------------------------------------------------------------------
+r850 | rubikitch | 2005-11-16 04:33:02 +0900 (Wed, 16 Nov 2005) | 1 line
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+
+------------------------------------------------------------------------
+r849 | rubikitch | 2005-11-16 04:29:12 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   D /el4r/trunk/bin/el4r-runtest.rb
+   A /el4r/trunk/lib/el4r/exec-el4r.rb (from /el4r/trunk/bin/el4r-runtest.rb:843)
+
+mv bin/el4r-runtest.rb lib/el4r/exec-el4r.rb
+
+------------------------------------------------------------------------
+r848 | rubikitch | 2005-11-16 04:24:43 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/el4r-rctool.rb
+
+load 'el4r-sub.rb' -> load 'el4r/el4r-sub.rb'
+
+------------------------------------------------------------------------
+r845 | rubikitch | 2005-11-16 04:03:17 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/lib/el4r/emacsruby/autoload/70el4r-mode.rb
+
+ruby-mode.rb is loaded after ruby-mode.el.
+
+------------------------------------------------------------------------
+r844 | rubikitch | 2005-11-16 03:52:02 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+eval-after-load in EmacsRuby
+
+------------------------------------------------------------------------
+r843 | rubikitch | 2005-11-16 03:28:43 +0900 (Wed, 16 Nov 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/lib/el4r/emacsruby/autoload/70el4r-mode.rb
+
+added lib/el4r/emacsruby/autoload/70el4r-mode.rb
+
+------------------------------------------------------------------------
+r842 | rubikitch | 2005-11-16 03:28:19 +0900 (Wed, 16 Nov 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/el4r-rctool.rb
+   M /el4r/trunk/testing/test-el4r.rb
+
+
+support autoloads
+
+------------------------------------------------------------------------
+r841 | rubikitch | 2005-11-16 03:10:47 +0900 (Wed, 16 Nov 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+   M /el4r/trunk/testing/test-el4r.rb
+
+
+new stdlib_dir, autoload_dir
+
+------------------------------------------------------------------------
+r840 | rubikitch | 2005-11-16 02:46:02 +0900 (Wed, 16 Nov 2005) | 3 lines
+Changed paths:
+   D /el4r/trunk/el4r
+
+
+rmdir el4r
+
+------------------------------------------------------------------------
+r839 | rubikitch | 2005-11-16 02:45:43 +0900 (Wed, 16 Nov 2005) | 3 lines
+Changed paths:
+   D /el4r/trunk/el4r/el4r-mode.rb
+   D /el4r/trunk/el4r/stdlib.rb
+   A /el4r/trunk/lib/el4r/emacsruby/el4r-mode.rb (from /el4r/trunk/el4r/el4r-mode.rb:826)
+   A /el4r/trunk/lib/el4r/emacsruby/stdlib.rb (from /el4r/trunk/el4r/stdlib.rb:826)
+
+
+mv el4r/* lib/el4r/emacsruby
+
+------------------------------------------------------------------------
+r838 | rubikitch | 2005-11-16 02:43:22 +0900 (Wed, 16 Nov 2005) | 3 lines
+Changed paths:
+   A /el4r/trunk/lib
+   A /el4r/trunk/lib/el4r
+   A /el4r/trunk/lib/el4r/emacsruby
+   A /el4r/trunk/lib/el4r/emacsruby/autoload
+
+
+mkdir -p lib/el4r/emacsruby/autoload
+
+------------------------------------------------------------------------
+r837 | rubikitch | 2005-11-16 01:25:17 +0900 (Wed, 16 Nov 2005) | 4 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+
+bin/el4r-runtest.rb: put all code into `exec_el4r' function.
+`test_mode' variable.
+
+------------------------------------------------------------------------
+r827 | rubikitch | 2005-11-13 00:49:03 +0900 (Sun, 13 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+task :testwin modified
+
+------------------------------------------------------------------------
+r826 | rubikitch | 2005-11-12 22:13:18 +0900 (Sat, 12 Nov 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+@el_program and @instance_program specify installed version now.
+@el_program_relative and @instance_program_relative specify locations in the package.
+
+------------------------------------------------------------------------
+r825 | rubikitch | 2005-11-12 22:10:59 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+Reflected el4r-runtest.rb changes.
+
+------------------------------------------------------------------------
+r824 | rubikitch | 2005-11-12 22:10:19 +0900 (Sat, 12 Nov 2005) | 4 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+new option: --show
+INCOMPATIBLE: `-r.' option must be specified when testing package. otherwise el4r-runtest.rb test installed version.
+refactored.
+
+------------------------------------------------------------------------
+r823 | rubikitch | 2005-11-12 15:02:24 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+reflected the path change of el4r.el.
+
+------------------------------------------------------------------------
+r822 | rubikitch | 2005-11-12 14:53:15 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/data
+   A /el4r/trunk/data/emacs
+   A /el4r/trunk/data/emacs/site-lisp (from /el4r/trunk/elisp:819)
+
+mv elisp/el4r.el data/emacs/site-lisp/el4r.el
+
+------------------------------------------------------------------------
+r821 | rubikitch | 2005-11-12 14:52:51 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   D /el4r/trunk/elisp
+
+mv elisp/el4r.el data/emacs/site-lisp/el4r.el
+
+------------------------------------------------------------------------
+r820 | rubikitch | 2005-11-12 14:52:17 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   D /el4r/trunk/elisp/el4r.el
+
+mv elisp/el4r.el data/emacs/site-lisp/el4r.el
+
+------------------------------------------------------------------------
+r819 | rubikitch | 2005-11-12 14:49:39 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/svnmemo.txt
+
+added svnmemo.txt
+
+------------------------------------------------------------------------
+r818 | rubikitch | 2005-11-12 14:48:09 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/install1
+
+Use installed version of el4r-rctool
+
+------------------------------------------------------------------------
+r814 | rubikitch | 2005-11-12 13:42:19 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+adjust to el4r-rctool path change.
+
+------------------------------------------------------------------------
+r813 | rubikitch | 2005-11-12 03:14:59 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool.rb
+
+el4r-rctool.rb generates bin/el4r-rctool now.
+
+------------------------------------------------------------------------
+r812 | rubikitch | 2005-11-12 03:09:34 +0900 (Sat, 12 Nov 2005) | 2 lines
+Changed paths:
+   D /el4r/trunk/el4r-rctool
+   A /el4r/trunk/el4r-rctool.rb (from /el4r/trunk/el4r-rctool:765)
+
+mv el4r-rctool el4r-rctool.rb
+
+------------------------------------------------------------------------
+r232 | rubikitch | 2005-11-01 15:06:26 +0900 (Tue, 01 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+test_el4r_lisp2ruby__treat_ctrl_codes: added coding system
+
+------------------------------------------------------------------------
+r231 | rubikitch | 2005-11-01 15:06:00 +0900 (Tue, 01 Nov 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r230 | rubikitch | 2005-10-20 18:36:40 +0900 (Thu, 20 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-string-to-rubystr: use-file (experimental)
+
+------------------------------------------------------------------------
+r229 | rubikitch | 2005-10-20 18:35:35 +0900 (Thu, 20 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool
+
+@temp_file
+
+------------------------------------------------------------------------
+r228 | rubikitch | 2005-10-15 16:48:35 +0900 (Sat, 15 Oct 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/testing/euc.txt
+   A /el4r/trunk/testing/jis.txt
+   A /el4r/trunk/testing/sjis.txt
+   A /el4r/trunk/testing/utf8.txt
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r227 | rubikitch | 2005-10-15 16:44:54 +0900 (Sat, 15 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+for ruby19
+
+------------------------------------------------------------------------
+r226 | rubikitch | 2005-10-15 16:38:46 +0900 (Sat, 15 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-override-variables overrides .el4rrc.rb setting.
+
+------------------------------------------------------------------------
+r225 | rubikitch | 2005-10-15 16:31:51 +0900 (Sat, 15 Oct 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+Log with current time.
+Detect load error when unit-testing.
+
+------------------------------------------------------------------------
+r223 | rubikitch | 2005-10-11 09:49:30 +0900 (Tue, 11 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/makepkgrc
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r222 | rubikitch | 2005-10-11 08:58:15 +0900 (Tue, 11 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+test_el4r_output: more tests
+
+------------------------------------------------------------------------
+r221 | rubikitch | 2005-10-11 08:58:02 +0900 (Tue, 11 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+raise if test-script is not found.
+
+------------------------------------------------------------------------
+r220 | rubikitch | 2005-10-11 08:57:35 +0900 (Tue, 11 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+El4rOutput#write: use princ
+
+------------------------------------------------------------------------
+r219 | rubikitch | 2005-10-10 22:21:57 +0900 (Mon, 10 Oct 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/makepkgrc
+
+@release_date
+@status = 'usable'
+
+------------------------------------------------------------------------
+r218 | rubikitch | 2005-10-10 22:21:34 +0900 (Mon, 10 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+
+use `whats_new' method
+
+------------------------------------------------------------------------
+r217 | rubikitch | 2005-10-10 21:28:29 +0900 (Mon, 10 Oct 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-init always kills *el4r:process* buffer to avoid mulfunction.
+el4r-recover recovers from mulfunctioned el4r process.
+
+------------------------------------------------------------------------
+r216 | rubikitch | 2005-10-10 21:26:15 +0900 (Mon, 10 Oct 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+write(puts, print, printf etc) support on EmacsRuby script.
+$stdout is redirected to *el4r:output* buffer.
+
+------------------------------------------------------------------------
+r215 | rubikitch | 2005-10-10 21:24:32 +0900 (Mon, 10 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/el4r-rctool
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r214 | rubikitch | 2005-10-09 19:17:02 +0900 (Sun, 09 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+refactored Test::Unit
+
+------------------------------------------------------------------------
+r213 | rubikitch | 2005-10-09 17:38:04 +0900 (Sun, 09 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/makepkgrc
+
+description: String -> Proc
+
+------------------------------------------------------------------------
+r212 | rubikitch | 2005-10-09 17:37:45 +0900 (Sun, 09 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/announce.en.mail.r
+   M /el4r/trunk/announce.ja.mail.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r211 | rubikitch | 2005-10-09 16:06:34 +0900 (Sun, 09 Oct 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+error handling bug fix
+(bad usage of `error' function)
+
+------------------------------------------------------------------------
+r210 | rubikitch | 2005-10-09 16:05:52 +0900 (Sun, 09 Oct 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+error is passed.
+(el4r-ruby-eval "el4r_lisp_eval(\"(signal 'test-error '(123))\")")
+
+------------------------------------------------------------------------
+r208 | rubikitch | 2005-10-07 04:11:03 +0900 (Fri, 07 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool
+
+END_OF_PATCH -> END_OF_BLOCK
+
+------------------------------------------------------------------------
+r207 | rubikitch | 2005-10-05 19:05:37 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   A /el4r/trunk/announce.en.mail.r
+   M /el4r/trunk/announce.ja.mail.r
+   M /el4r/trunk/el4r.en.rd.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r206 | rubikitch | 2005-10-05 13:12:00 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/announce.ja.mail.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r205 | rubikitch | 2005-10-05 07:10:09 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/el4r-rctool
+   M /el4r/trunk/makepkgrc
+
+sub.rb -> el4r-sub.rb
+
+------------------------------------------------------------------------
+r204 | rubikitch | 2005-10-05 06:24:51 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+Override el4r-related variables from ~/.el4rrc.rb in el4r-init
+
+------------------------------------------------------------------------
+r203 | rubikitch | 2005-10-05 06:24:04 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+   M /el4r/trunk/makepkgrc
+
+release ver 0.9.2
+
+------------------------------------------------------------------------
+r202 | rubikitch | 2005-10-05 06:23:52 +0900 (Wed, 05 Oct 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/install0.r
+   M /el4r/trunk/install1
+
+release ver 0.9.2
+new installation method
+
+------------------------------------------------------------------------
+r201 | rubikitch | 2005-10-05 06:18:16 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r200 | rubikitch | 2005-10-05 04:33:31 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r199 | rubikitch | 2005-10-05 04:17:55 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/el4r-rctool
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r198 | rubikitch | 2005-10-05 01:26:15 +0900 (Wed, 05 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r197 | rubikitch | 2005-10-04 17:45:44 +0900 (Tue, 04 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+test_winconf
+
+------------------------------------------------------------------------
+r196 | rubikitch | 2005-10-04 17:36:01 +0900 (Tue, 04 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r195 | rubikitch | 2005-10-04 01:34:09 +0900 (Tue, 04 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+el4r_load "stdlib.rb"
+
+------------------------------------------------------------------------
+r194 | rubikitch | 2005-10-04 01:32:12 +0900 (Tue, 04 Oct 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/el4r/stdlib.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r193 | rubikitch | 2005-10-04 01:25:31 +0900 (Tue, 04 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r192 | rubikitch | 2005-10-04 01:15:58 +0900 (Tue, 04 Oct 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/el4r
+   A /el4r/trunk/el4r/el4r-mode.rb
+   D /el4r/trunk/example
+
+mv example/el4r-mode.rb el4r
+
+------------------------------------------------------------------------
+r191 | rubikitch | 2005-10-02 22:47:45 +0900 (Sun, 02 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r190 | rubikitch | 2005-10-02 16:04:04 +0900 (Sun, 02 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r-rctool
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r189 | rubikitch | 2005-10-02 16:03:38 +0900 (Sun, 02 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+el4r_load_path
+
+------------------------------------------------------------------------
+r188 | rubikitch | 2005-10-01 15:28:25 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+print default value when -h(--help)
+
+------------------------------------------------------------------------
+r187 | rubikitch | 2005-10-01 14:15:04 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/el4r-rctool
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r186 | rubikitch | 2005-10-01 14:13:54 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+set el4r_el, el4r_instance from ~/.el4rrc.rb
+
+------------------------------------------------------------------------
+r185 | rubikitch | 2005-10-01 13:21:50 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+replace literals with conf
+
+------------------------------------------------------------------------
+r184 | rubikitch | 2005-10-01 12:56:17 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+use ~/.el4rrc.rb
+
+------------------------------------------------------------------------
+r183 | rubikitch | 2005-10-01 12:47:45 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r182 | rubikitch | 2005-10-01 04:44:28 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/elisp/el4r.el
+
+use ~/.el4rrc.rb
+
+------------------------------------------------------------------------
+r181 | rubikitch | 2005-10-01 04:18:47 +0900 (Sat, 01 Oct 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+use ~/.el4rrc.rb
+
+------------------------------------------------------------------------
+r180 | rubikitch | 2005-09-30 11:45:07 +0900 (Fri, 30 Sep 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r179 | rubikitch | 2005-09-24 02:50:26 +0900 (Sat, 24 Sep 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r178 | rubikitch | 2005-09-09 07:26:33 +0900 (Fri, 09 Sep 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+suppress messages when --batch mode
+
+------------------------------------------------------------------------
+r177 | rubikitch | 2005-09-09 07:25:34 +0900 (Fri, 09 Sep 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test-el4r.rb
+
+el4r_treat_ctrl_codes
+
+------------------------------------------------------------------------
+r176 | rubikitch | 2005-08-31 14:22:57 +0900 (Wed, 31 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-init: fixed; When el4r-instance is accidentally dead, M-x el4r-boot does not work.
+
+------------------------------------------------------------------------
+r175 | rubikitch | 2005-08-19 22:40:11 +0900 (Fri, 19 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+class ElApp
+
+------------------------------------------------------------------------
+r174 | rubikitch | 2005-08-19 03:19:56 +0900 (Fri, 19 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r173 | rubikitch | 2005-08-19 02:33:12 +0900 (Fri, 19 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+load_path
+
+------------------------------------------------------------------------
+r172 | rubikitch | 2005-08-18 20:06:44 +0900 (Thu, 18 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+small bugfix
+
+------------------------------------------------------------------------
+r171 | rubikitch | 2005-08-18 12:00:08 +0900 (Thu, 18 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r170 | rubikitch | 2005-08-18 11:59:52 +0900 (Thu, 18 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+removed Test::Unit::AutoRunner.run dependency because of API change.
+
+------------------------------------------------------------------------
+r169 | rubikitch | 2005-08-18 11:58:47 +0900 (Thu, 18 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-gc.rb
+
+/tmp -> Dir.tmpdir
+
+------------------------------------------------------------------------
+r168 | rubikitch | 2005-08-18 10:13:54 +0900 (Thu, 18 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r167 | rubikitch | 2005-08-18 10:12:40 +0900 (Thu, 18 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+Support Windows(wine)!
+
+------------------------------------------------------------------------
+r166 | rubikitch | 2005-08-16 18:33:11 +0900 (Tue, 16 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+newbuf with block.
+
+------------------------------------------------------------------------
+r165 | rubikitch | 2005-08-16 18:32:33 +0900 (Tue, 16 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/makepkgrc
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r164 | rubikitch | 2005-08-14 02:35:30 +0900 (Sun, 14 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+setq -> defvar
+
+------------------------------------------------------------------------
+r163 | rubikitch | 2005-08-14 02:21:22 +0900 (Sun, 14 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+added (buffer-disable-undo)
+
+------------------------------------------------------------------------
+r161 | rubikitch | 2005-08-14 01:05:02 +0900 (Sun, 14 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/install1
+   M /el4r/trunk/makepkgrc
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r160 | rubikitch | 2005-08-12 17:18:59 +0900 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r159 | rubikitch | 2005-08-12 17:18:09 +0900 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-gc.rb
+
+more tests in test_rubyGC
+
+------------------------------------------------------------------------
+r158 | rubikitch | 2005-08-12 17:17:30 +0900 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+task testgc
+
+------------------------------------------------------------------------
+r157 | rubikitch | 2005-08-12 02:36:01 +0900 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+perform GC test separately
+
+------------------------------------------------------------------------
+r156 | rubikitch | 2005-08-12 02:33:06 +0900 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/testing/test-gc.rb
+
+moved from test-el4r.rb
+
+------------------------------------------------------------------------
+r155 | rubikitch | 2005-08-12 02:32:33 +0900 (Fri, 12 Aug 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+moved GC tests to test-gc.rb
+added TestDefunWithinClass
+
+------------------------------------------------------------------------
+r154 | rubikitch | 2005-08-12 02:09:08 +0900 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+increased GC trigger when testing
+
+------------------------------------------------------------------------
+r153 | rubikitch | 2005-08-12 02:08:30 +0900 (Fri, 12 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/makepkgrc
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r152 | rubikitch | 2005-08-11 16:58:52 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   D /el4r/trunk/pkg
+
+remove pkg
+
+------------------------------------------------------------------------
+r150 | rubikitch | 2005-08-11 16:23:04 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/pkg
+   A /el4r/trunk/pkg/keepme
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r149 | rubikitch | 2005-08-11 16:16:43 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+define_web_task
+
+------------------------------------------------------------------------
+r148 | rubikitch | 2005-08-11 15:44:12 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+added comments.
+
+------------------------------------------------------------------------
+r147 | rubikitch | 2005-08-11 15:27:44 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/makepkgrc
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r146 | rubikitch | 2005-08-11 15:20:39 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+output ruby/emacs version when unit-testing.
+
+------------------------------------------------------------------------
+r145 | rubikitch | 2005-08-11 15:20:02 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+output ruby/emacs version when unit-testing.
+
+------------------------------------------------------------------------
+r144 | rubikitch | 2005-08-11 15:19:08 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.ja.rd.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r143 | rubikitch | 2005-08-11 15:09:53 +0900 (Thu, 11 Aug 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/el4r.en.rd.r
+   M /el4r/trunk/el4r.ja.rd.r
+
+wrote documents
+
+------------------------------------------------------------------------
+r142 | rubikitch | 2005-08-09 16:54:38 +0900 (Tue, 09 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+-i
+
+------------------------------------------------------------------------
+r141 | rubikitch | 2005-08-09 16:54:07 +0900 (Tue, 09 Aug 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/testing/alltest.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r140 | rubikitch | 2005-08-09 16:52:36 +0900 (Tue, 09 Aug 2005) | 4 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+test_test_el__debug_ruby_eval_report
+test_test_el__condition_case
+test_delete_other_windows
+
+------------------------------------------------------------------------
+r139 | rubikitch | 2005-08-07 08:55:59 +0900 (Sun, 07 Aug 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/install0.r
+   A /el4r/trunk/install1
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r138 | rubikitch | 2005-08-06 03:52:42 +0900 (Sat, 06 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r137 | rubikitch | 2005-08-05 11:43:00 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r136 | rubikitch | 2005-08-05 11:42:41 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/el4r.ja.rd.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r135 | rubikitch | 2005-08-05 11:40:18 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r134 | rubikitch | 2005-08-05 11:39:28 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r133 | rubikitch | 2005-08-05 11:38:33 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r132 | rubikitch | 2005-08-05 11:37:39 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r131 | rubikitch | 2005-08-05 11:37:30 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r130 | rubikitch | 2005-08-05 11:35:09 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/bin/el4r-runtest.rb
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test-el4r.rb
+
+Added copyright and rcs-id.
+
+------------------------------------------------------------------------
+r129 | rubikitch | 2005-08-05 11:33:56 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+removed mylib.rb dependency
+
+------------------------------------------------------------------------
+r128 | rubikitch | 2005-08-05 11:22:48 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r127 | rubikitch | 2005-08-05 11:22:19 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r126 | rubikitch | 2005-08-05 09:04:17 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+rdoc task
+
+------------------------------------------------------------------------
+r125 | rubikitch | 2005-08-05 08:57:37 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+made Struct-base classes rdoc-compliant.
+
+------------------------------------------------------------------------
+r124 | rubikitch | 2005-08-05 08:37:28 +0900 (Fri, 05 Aug 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-ruby-program: new
+el4r-instance-program: full-path
+
+------------------------------------------------------------------------
+r123 | rubikitch | 2005-08-05 08:36:30 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+--ruby
+
+------------------------------------------------------------------------
+r122 | rubikitch | 2005-08-05 05:17:21 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+fixed typo
+
+------------------------------------------------------------------------
+r121 | rubikitch | 2005-08-05 03:49:36 +0900 (Fri, 05 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+added RDoc document.
+
+------------------------------------------------------------------------
+r120 | rubikitch | 2005-08-03 12:30:24 +0900 (Wed, 03 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.ja.rd.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r119 | rubikitch | 2005-08-02 22:15:54 +0900 (Tue, 02 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/el4r.ja.rd.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r118 | rubikitch | 2005-08-01 03:22:19 +0900 (Mon, 01 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/Rakefile
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r117 | rubikitch | 2005-08-01 01:24:12 +0900 (Mon, 01 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+equality
+
+------------------------------------------------------------------------
+r116 | rubikitch | 2005-08-01 01:13:30 +0900 (Mon, 01 Aug 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r115 | rubikitch | 2005-07-31 23:40:00 +0900 (Sun, 31 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+refactored el4r_install_builtin_functions
+el4r_install_xemacs_workaround
+
+------------------------------------------------------------------------
+r114 | rubikitch | 2005-07-31 16:06:22 +0900 (Sun, 31 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+a small changes in test method to work with xemacs
+
+------------------------------------------------------------------------
+r113 | rubikitch | 2005-07-31 16:00:39 +0900 (Sun, 31 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+test_elerror: changed test-case function (buffer-size) -> (errorfunc0) because of API difference between emacs and xemacs
+
+------------------------------------------------------------------------
+r112 | rubikitch | 2005-07-31 05:23:54 +0900 (Sun, 31 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+newbuf: :bury
+
+------------------------------------------------------------------------
+r111 | rubikitch | 2005-07-31 05:18:01 +0900 (Sun, 31 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+newbuf: :read_only
+
+------------------------------------------------------------------------
+r110 | rubikitch | 2005-07-31 03:15:42 +0900 (Sun, 31 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+-v option is no longer default.
+new option: -nw / -l
+
+------------------------------------------------------------------------
+r109 | rubikitch | 2005-07-31 03:14:23 +0900 (Sun, 31 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r108 | rubikitch | 2005-07-31 03:07:49 +0900 (Sun, 31 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+preserve the log-file when ENV['EL4R_PRESERVE_LOG'] is set.
+fixed a bug about ENV['EL4R_LOG'] and pipe. (regexp quote problem)
+
+------------------------------------------------------------------------
+r107 | rubikitch | 2005-07-31 02:45:36 +0900 (Sun, 31 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+put off sexps in single quotes to enable us `C-x C-e'
+
+------------------------------------------------------------------------
+r106 | rubikitch | 2005-07-31 02:39:31 +0900 (Sun, 31 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+fixed an error when `el4r-boot' with *el4r:log* displayed.
+
+------------------------------------------------------------------------
+r105 | rubikitch | 2005-07-27 23:25:11 +0900 (Wed, 27 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+ELListCell, ELVector: refactored
+
+------------------------------------------------------------------------
+r104 | rubikitch | 2005-07-27 23:24:58 +0900 (Wed, 27 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+ELListCell, ELVector: added more tests
+
+------------------------------------------------------------------------
+r103 | rubikitch | 2005-07-27 22:08:13 +0900 (Wed, 27 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test-el4r.rb
+
+vector -> ELVector (read only)
+
+------------------------------------------------------------------------
+r102 | rubikitch | 2005-07-27 21:25:50 +0900 (Wed, 27 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+el_load
+
+------------------------------------------------------------------------
+r101 | rubikitch | 2005-07-27 21:19:04 +0900 (Wed, 27 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+Test::Unit::TestCase : include/extend ElMixin
+
+------------------------------------------------------------------------
+r100 | rubikitch | 2005-07-26 05:46:49 +0900 (Tue, 26 Jul 2005) | 4 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+ElMixin#el -> ElMixin#elisp
+ElMixin#el4r
+ElMixin#method_missing
+
+------------------------------------------------------------------------
+r99 | rubikitch | 2005-07-26 05:44:59 +0900 (Tue, 26 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r98 | rubikitch | 2005-07-26 05:14:45 +0900 (Tue, 26 Jul 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/el4r.ja.rd.r
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r97 | rubikitch | 2005-07-23 11:13:43 +0900 (Sat, 23 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+Now removed $el, el{}
+A module(class) included ElMixin now delegates to el4r object.
+
+------------------------------------------------------------------------
+r96 | rubikitch | 2005-07-22 05:08:04 +0900 (Fri, 22 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+bufstr
+
+------------------------------------------------------------------------
+r95 | rubikitch | 2005-07-22 05:02:15 +0900 (Fri, 22 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+defun by string
+
+------------------------------------------------------------------------
+r94 | rubikitch | 2005-07-21 16:21:00 +0900 (Thu, 21 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+defadvice
+
+------------------------------------------------------------------------
+r93 | rubikitch | 2005-07-20 20:10:32 +0900 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r92 | rubikitch | 2005-07-20 08:40:39 +0900 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+to_s
+
+------------------------------------------------------------------------
+r91 | rubikitch | 2005-07-20 08:40:20 +0900 (Wed, 20 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r90 | rubikitch | 2005-07-19 02:32:31 +0900 (Tue, 19 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test-el4r.rb
+
+backtrace EmacsLisp when ELError
+
+------------------------------------------------------------------------
+r89 | rubikitch | 2005-07-19 01:36:42 +0900 (Tue, 19 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r88 | rubikitch | 2005-07-19 01:30:32 +0900 (Tue, 19 Jul 2005) | 4 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+el4r-runtest.rb: -d, --debug
+
+Strip el4r-instance error from unittest backtrace by default.
+
+------------------------------------------------------------------------
+r87 | rubikitch | 2005-07-18 06:09:22 +0900 (Mon, 18 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+unittest-mode
+
+------------------------------------------------------------------------
+r86 | rubikitch | 2005-07-18 03:54:25 +0900 (Mon, 18 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+added -nw option.
+
+------------------------------------------------------------------------
+r85 | rubikitch | 2005-07-18 03:53:54 +0900 (Mon, 18 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+added newbuf.
+fixed typo.
+
+------------------------------------------------------------------------
+r84 | rubikitch | 2005-07-18 03:53:29 +0900 (Mon, 18 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+TestNewbuf
+
+------------------------------------------------------------------------
+r83 | rubikitch | 2005-07-16 23:43:25 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+-batch -> -b/--batch
+
+------------------------------------------------------------------------
+r82 | rubikitch | 2005-07-16 23:40:18 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+always display help message.
+
+------------------------------------------------------------------------
+r81 | rubikitch | 2005-07-16 16:56:50 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/Rakefile
+   A /el4r/trunk/makepkgrc
+   A /el4r/trunk/testing/badcase.rb
+
+added new files
+
+------------------------------------------------------------------------
+r80 | rubikitch | 2005-07-16 16:39:08 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+tuned emacs-lisp.
+
+------------------------------------------------------------------------
+r79 | rubikitch | 2005-07-16 16:38:43 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*el4r:log*, *Result*: read-only
+
+------------------------------------------------------------------------
+r78 | rubikitch | 2005-07-16 16:14:06 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+Unittest options.
+
+------------------------------------------------------------------------
+r77 | rubikitch | 2005-07-16 07:08:18 +0900 (Sat, 16 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+C-c C-c / C-l
+el4r_is_debug = true
+
+------------------------------------------------------------------------
+r76 | rubikitch | 2005-07-16 07:00:03 +0900 (Sat, 16 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+Remove log-file at exit.
+trap SIGHUP, too.
+
+------------------------------------------------------------------------
+r75 | rubikitch | 2005-07-16 05:32:17 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+test_elerror
+
+------------------------------------------------------------------------
+r74 | rubikitch | 2005-07-16 05:31:53 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+display current sexp when error.
+
+------------------------------------------------------------------------
+r73 | rubikitch | 2005-07-16 05:31:42 +0900 (Sat, 16 Jul 2005) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+display current sexp when error.
+*Result*: fundamental-mode
+
+------------------------------------------------------------------------
+r72 | rubikitch | 2005-07-16 00:30:57 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+ElMixin
+
+------------------------------------------------------------------------
+r71 | rubikitch | 2005-07-16 00:26:04 +0900 (Sat, 16 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+ElMixin#el
+
+------------------------------------------------------------------------
+r70 | rubikitch | 2005-07-12 07:22:03 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+show lisp error message.
+
+------------------------------------------------------------------------
+r69 | rubikitch | 2005-07-12 07:12:02 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r68 | rubikitch | 2005-07-12 07:11:44 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test-el4r.rb
+
+small bug fix
+
+------------------------------------------------------------------------
+r67 | rubikitch | 2005-07-12 03:48:00 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/testing/test-el4r.rb
+
+added test-el4r.rb
+
+------------------------------------------------------------------------
+r66 | rubikitch | 2005-07-12 03:00:32 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+disable debug-on-error
+
+------------------------------------------------------------------------
+r65 | rubikitch | 2005-07-12 03:00:04 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+Ruby Regexp support.
+
+------------------------------------------------------------------------
+r64 | rubikitch | 2005-07-12 02:19:31 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/bin/el4r-runtest.rb
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-runtest does not load init.rb.
+
+------------------------------------------------------------------------
+r63 | rubikitch | 2005-07-12 02:10:28 +0900 (Tue, 12 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+cleanup code.
+
+------------------------------------------------------------------------
+r62 | rubikitch | 2005-07-09 02:35:38 +0900 (Sat, 09 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+rewrite `el4r-show-log' without using `tail -f el4r_log' process.
+
+------------------------------------------------------------------------
+r61 | rubikitch | 2005-07-09 02:25:10 +0900 (Sat, 09 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r60 | rubikitch | 2005-07-09 02:20:51 +0900 (Sat, 09 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+unittest stuff
+
+------------------------------------------------------------------------
+r59 | rubikitch | 2005-07-09 01:04:32 +0900 (Sat, 09 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+kill text-properties
+
+------------------------------------------------------------------------
+r58 | rubikitch | 2005-07-03 12:39:20 +0900 (Sun, 03 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-runtest.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r57 | rubikitch | 2005-07-03 07:27:39 +0900 (Sun, 03 Jul 2005) | 2 lines
+Changed paths:
+   A /el4r/trunk/bin/el4r-runtest.rb
+
+added el4r-runtest.rb
+
+------------------------------------------------------------------------
+r56 | rubikitch | 2005-07-02 13:44:09 +0900 (Sat, 02 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+El4r::ELListCell#to_ary
+
+------------------------------------------------------------------------
+r55 | rubikitch | 2005-07-02 09:26:47 +0900 (Sat, 02 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+$el : el4r object
+
+------------------------------------------------------------------------
+r54 | rubikitch | 2005-07-02 09:24:10 +0900 (Sat, 02 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+fixed match-data problem
+
+------------------------------------------------------------------------
+r53 | rubikitch | 2005-07-02 09:06:00 +0900 (Sat, 02 Jul 2005) | 4 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+migrate from my .emacs
+  * process-send-signal
+  * el4r-boot (rubikitch version)
+
+------------------------------------------------------------------------
+r52 | rubikitch | 2005-07-02 08:59:13 +0900 (Sat, 02 Jul 2005) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+
+fixed el4r-process el4r-logger-process multiplication problem
+
+------------------------------------------------------------------------
+r50 | shirai | 2003-09-18 18:45:47 +0900 (Thu, 18 Sep 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/env
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r49 | shirai | 2003-08-29 16:01:37 +0900 (Fri, 29 Aug 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test.rb
+
+let: Fixed bug.
+
+------------------------------------------------------------------------
+r48 | shirai | 2003-08-29 15:08:03 +0900 (Fri, 29 Aug 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test.rb
+   M /el4r/trunk/testrun
+
+let: Added.
+
+------------------------------------------------------------------------
+r47 | shirai | 2003-08-29 14:29:19 +0900 (Fri, 29 Aug 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-ruby-eval-buffer: Added.
+
+------------------------------------------------------------------------
+r46 | shirai | 2003-08-06 11:20:14 +0900 (Wed, 06 Aug 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+(Lisp)el4r-load: Added.
+
+------------------------------------------------------------------------
+r45 | shirai | 2003-07-16 22:12:38 +0900 (Wed, 16 Jul 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+$stderr=... -> STDERR.reopen
+
+------------------------------------------------------------------------
+r44 | shirai | 2003-07-16 19:06:20 +0900 (Wed, 16 Jul 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r43 | shirai | 2003-06-02 04:04:47 +0900 (Mon, 02 Jun 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/example/el4r-mode.rb
+
+el4r-mode: \C-j to eval ruby.
+
+------------------------------------------------------------------------
+r42 | shirai | 2003-06-02 02:51:14 +0900 (Mon, 02 Jun 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r41 | shirai | 2003-05-31 21:10:52 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r40 | shirai | 2003-05-31 21:04:50 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   A /el4r/trunk/BUGS
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r39 | shirai | 2003-05-31 19:41:20 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+Implemented I/O logging using ucspi-tcp's recordio.
+
+------------------------------------------------------------------------
+r38 | shirai | 2003-05-31 19:40:43 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r37 | shirai | 2003-05-31 17:46:17 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+ELListCell#car,cdr,nth,[],to_hash: Added.
+
+------------------------------------------------------------------------
+r36 | shirai | 2003-05-31 17:45:53 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/elisp/el4r.el
+
+Fixed the problem Lisp side did not quote #{} expansion.
+
+------------------------------------------------------------------------
+r35 | shirai | 2003-05-31 16:29:40 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   A /el4r/trunk/example
+   A /el4r/trunk/example/el4r-mode.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r34 | shirai | 2003-05-31 16:24:41 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+
+Use \0\n instead of \0 for sending from Emacs.
+
+------------------------------------------------------------------------
+r33 | shirai | 2003-05-31 14:57:00 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+
+funcall_with -> with.
+
+------------------------------------------------------------------------
+r32 | shirai | 2003-05-31 11:48:44 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+Implemented elkey.
+
+------------------------------------------------------------------------
+r31 | shirai | 2003-05-31 11:26:34 +0900 (Sat, 31 May 2003) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test.rb
+
+Implemented funcall_with.
+Fixed Proc passing bug.
+
+------------------------------------------------------------------------
+r30 | shirai | 2003-05-31 10:33:44 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+
+Supported interactive and docstring.
+
+------------------------------------------------------------------------
+r29 | shirai | 2003-05-31 00:04:34 +0900 (Sat, 31 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+require: Mapped to Kernel.require. Use el_require for require in lisp.
+
+------------------------------------------------------------------------
+r28 | shirai | 2003-05-30 23:46:37 +0900 (Fri, 30 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+
+el4r-boot: Added.
+
+------------------------------------------------------------------------
+r27 | shirai | 2003-05-30 23:24:06 +0900 (Fri, 30 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/testing/test.rb
+
+ELInstance#elvar: Added.
+
+------------------------------------------------------------------------
+r26 | shirai | 2003-05-30 23:07:47 +0900 (Fri, 30 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+
+Fixed: The problem that Proc wrapped in lambda is not marked.
+
+------------------------------------------------------------------------
+r25 | shirai | 2003-05-30 21:55:36 +0900 (Fri, 30 May 2003) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+
+Implemented GC of Ruby's object.
+ELListCell, ELListCell#to_a: Added.
+
+------------------------------------------------------------------------
+r24 | shirai | 2003-05-30 17:55:19 +0900 (Fri, 30 May 2003) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+   M /el4r/trunk/testrun
+
+Implemented GC of Lisp's object.
+Fixed stack error of el4r-get.
+
+------------------------------------------------------------------------
+r23 | shirai | 2003-05-30 16:03:23 +0900 (Fri, 30 May 2003) | 3 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.el
+   M /el4r/trunk/testing/test.rb
+
+Implemented Ruby's proc -> Lisp's lambda conversion.
+Implemented defun (define_function) on Ruby.
+
+------------------------------------------------------------------------
+r22 | shirai | 2003-05-30 13:58:33 +0900 (Fri, 30 May 2003) | 4 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+
+Ruby's object can be passed to lisp.
+28-bit integer limitation check.
+el4r-instance process status check.
+
+------------------------------------------------------------------------
+r21 | shirai | 2003-05-28 23:21:16 +0900 (Wed, 28 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r20 | shirai | 2003-05-28 23:08:34 +0900 (Wed, 28 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/testing/test.rb
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r19 | shirai | 2003-05-28 23:00:12 +0900 (Wed, 28 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+
+Implemented reference from Ruby to Lisp object. (But GC is not yet)
+
+------------------------------------------------------------------------
+r18 | shirai | 2003-05-28 22:09:15 +0900 (Wed, 28 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+   M /el4r/trunk/testrun
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r17 | shirai | 2003-05-28 21:29:43 +0900 (Wed, 28 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r16 | shirai | 2003-05-26 22:47:59 +0900 (Mon, 26 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   A /el4r/trunk/testing/test.el
+   M /el4r/trunk/testing/test.rb
+   M /el4r/trunk/testrun
+
+Error handling on lisp side.
+
+------------------------------------------------------------------------
+r15 | shirai | 2003-05-25 00:26:00 +0900 (Sun, 25 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+   M /el4r/trunk/testrun
+
+Implemented error handling for one from Ruby.
+
+------------------------------------------------------------------------
+r14 | shirai | 2003-05-24 19:22:53 +0900 (Sat, 24 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   M /el4r/trunk/testing/test.rb
+
+Implemented callback interrupt from elisp and error handling in Ruby.
+
+------------------------------------------------------------------------
+r13 | shirai | 2003-05-24 17:36:39 +0900 (Sat, 24 May 2003) | 2 lines
+Changed paths:
+   M /el4r/trunk/bin/el4r-instance
+   M /el4r/trunk/elisp/el4r.el
+   A /el4r/trunk/testing
+   A /el4r/trunk/testing/test.rb
+   M /el4r/trunk/testrun
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r12 | shirai | 2003-05-24 08:40:03 +0900 (Sat, 24 May 2003) | 2 lines
+Changed paths:
+   A /el4r/trunk/bin
+   A /el4r/trunk/bin/el4r-instance
+   A /el4r/trunk/elisp
+   A /el4r/trunk/elisp/el4r.el
+   A /el4r/trunk/env
+   A /el4r/trunk/testrun
+
+*** empty log message ***
+
+------------------------------------------------------------------------
+r11 | (no author) | 2003-05-24 08:40:03 +0900 (Sat, 24 May 2003) | 1 line
+Changed paths:
+   A /el4r/branches
+   A /el4r/tags
+   A /el4r/trunk
+
+New repository initialized by cvs2svn.
+------------------------------------------------------------------------

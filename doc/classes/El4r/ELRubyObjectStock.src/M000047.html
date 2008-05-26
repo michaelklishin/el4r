@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>obj2id (El4r::ELRubyObjectStock)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File bin/el4r-instance, line 241</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">obj2id</span>(<span class="ruby-identifier">obj</span>)
+      <span class="ruby-identifier">garbage_collect_if_required</span>
+      <span class="ruby-identifier">oid</span> = <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">__id__</span>
+      <span class="ruby-ivar">@oid_to_obj_hash</span>[<span class="ruby-identifier">oid</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">obj</span>
+      <span class="ruby-identifier">oid</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,129 @@
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!--
+
+    Methods
+
+  -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Methods</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="rdoc-style.css" type="text/css" />
+  <base target="docwin" />
+</head>
+<body>
+<div id="index">
+  <h1 class="section-bar">Methods</h1>
+  <div id="index-entries">
+    <a href="classes/El4r/ELObject.html#M000102">== (El4r::ELObject)</a><br />
+    <a href="classes/El4r/ELVariables.html#M000051">[] (El4r::ELVariables)</a><br />
+    <a href="classes/El4r/ELSequence.html#M000056">[] (El4r::ELSequence)</a><br />
+    <a href="classes/El4r/ELVector.html#M000039">[]= (El4r::ELVector)</a><br />
+    <a href="classes/El4r/ELVariables.html#M000052">[]= (El4r::ELVariables)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000028">_handle_attrs (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000021">_init_eval_after_load (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000026">ad_do_it (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000025">bufstr (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELSequence.html#M000055">check (El4r::ELSequence)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000049">count_of_stocked_objects (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000027">defadvice (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000030">define_derived_mode (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000016">define_key (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000031">define_minor_mode (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/ElApp.html#M000003">defun (ElApp)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000014">defun (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000015">defvar (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELSequence.html#M000057">each (El4r::ELSequence)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000036">el (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4rAccessor.html#M000005">el4r (El4rAccessor)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000076">el4r_add_garbage_lispobj (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000066">el4r_args_to_lispseq (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000071">el4r_backtrace (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000074">el4r_boot (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000072">el4r_boot__noinit (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000092">el4r_callback? (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000063">el4r_conv_regexp (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000086">el4r_debug (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000085">el4r_elobject_new (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000081">el4r_get (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000077">el4r_get_garbage_lispobj_ids (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000084">el4r_interrupt (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000062">el4r_lisp_eval (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000061">el4r_load (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000067">el4r_log (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000087">el4r_log_io (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000070">el4r_p (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000069">el4r_prin1 (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000068">el4r_prin1_to_string (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000073">el4r_process_autoloads (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000091">el4r_raise_lisp_error (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000078">el4r_readfile (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000082">el4r_recv (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000090">el4r_reraise_last_error (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000064">el4r_ruby2lisp (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000089">el4r_ruby_eval (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000065">el4r_rubyproc_to_lambda (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000083">el4r_send (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000075">el4r_shutdown (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000093">el4r_treat_ctrl_codes (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000080">el4r_wait_expr (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000079">el4r_wait_expr_loop (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000088">el4r_with_call (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000035">el_lambda (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000034">el_load (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000033">el_require (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/ElMixin.html#M000006">elisp (ElMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000022">eval_after_load (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELObject.html#M000103">finalizer_proc (El4r::ELObject)</a><br />
+    <a href="classes/El4r/El4rOutput.html#M000096">flush (El4r::El4rOutput)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000010">funcall (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000012">funcall_internal (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000045">garbage_collect (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000042">garbage_collect_if_required (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000018">getq (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000048">id2obj (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/ElApp.html#M000004">import_function (ElApp)</a><br />
+    <a href="classes/El4r/ELSequence.html#M000054">inspect (El4r::ELSequence)</a><br />
+    <a href="classes/El4r/ELObject.html#M000099">inspect (El4r::ELObject)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000023">let (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r.html#M000008">lisp_dump_string (El4r)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000011">method_missing (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/ElMixin.html#M000007">method_missing (ElMixin)</a><br />
+    <a href="classes/El4r/ELVariables.html#M000053">method_missing (El4r::ELVariables)</a><br />
+    <a href="classes/El4r.html#M000009">name_rb2el (El4r)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000041">new (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELInstance.html#M000060">new (El4r::ELInstance)</a><br />
+    <a href="classes/El4r/El4rOutput.html#M000094">new (El4r::El4rOutput)</a><br />
+    <a href="classes/El4r/ELObject.html#M000097">new (El4r::ELObject)</a><br />
+    <a href="classes/ElApp.html#M000002">new (ElApp)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000024">newbuf (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000047">obj2id (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000046">obj2lisp (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000044">post_gc_hook (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELRubyObjectStock.html#M000043">pre_gc_hook (El4r::ELRubyObjectStock)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000032">require (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/ElApp.html#M000001">run (ElApp)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000020">set (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000019">setq (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000017">symbol_value (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELSequence.html#M000058">to_a (El4r::ELSequence)</a><br />
+    <a href="classes/El4r/ELListCell.html#M000037">to_a_func (El4r::ELListCell)</a><br />
+    <a href="classes/El4r/ELConsCell.html#M000050">to_a_func (El4r::ELConsCell)</a><br />
+    <a href="classes/El4r/ELVector.html#M000040">to_a_func (El4r::ELVector)</a><br />
+    <a href="classes/El4r/ELSequence.html#M000059">to_ary (El4r::ELSequence)</a><br />
+    <a href="classes/El4r/ELListCell.html#M000038">to_hash (El4r::ELListCell)</a><br />
+    <a href="classes/El4r/ELObject.html#M000098">to_lisp (El4r::ELObject)</a><br />
+    <a href="classes/El4r/ELObject.html#M000100">to_s (El4r::ELObject)</a><br />
+    <a href="classes/El4r/ELObject.html#M000101">to_str (El4r::ELObject)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000013">with (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/ELMethodsMixin.html#M000029">with_preserved_block (El4r::ELMethodsMixin)</a><br />
+    <a href="classes/El4r/El4rOutput.html#M000095">write (El4r::El4rOutput)</a><br />
+  </div>
+</div>
+</body>
+</html>

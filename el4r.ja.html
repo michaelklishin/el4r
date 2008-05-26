@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="iso-2022-jp" ?>
+<!DOCTYPE html 
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>el4r 〜EmacsRubyで楽しいEmacsライフ〜</title>
+<meta http-equiv="Content-type" content="text/html; charset=iso-2022-jp" />
+<!-- head-element:nil -->
+</head>
+<body>
+<h2>Index</h2>
+
+<ul>
+<li><p><a href="#label:1">What's new</a></p>
+<ul>
+<li><a href="#label:2">[2006/09/21] 1.0.4 released</a></li>
+<li><a href="#label:3">[2006/03/12] 1.0.3 released</a></li>
+<li><a href="#label:4">[2005/12/11] 1.0.2 released</a></li>
+<li><a href="#label:5">[2005/12/02] 1.0.1 released</a></li>
+<li><a href="#label:6">[2005/12/01] 1.0.0 released</a></li>
+<li><a href="#label:7">[2005/10/11] 0.9.3 released</a></li>
+<li><a href="#label:8">[2005/10/05] 0.9.2 released</a></li>
+</ul></li>
+<li><a href="#label:9">概要</a></li>
+<li><a href="#label:10">動機</a></li>
+<li><a href="#label:11">動作原理</a></li>
+<li><a href="#label:12">動作環境</a></li>
+<li><a href="#label:13">ダウンロード・インストール・設定</a></li>
+<li><a href="#label:14">起動</a></li>
+<li><p><a href="#label:15">EmacsRubyを書く</a></p>
+<ul>
+<li><a href="#label:16">EmacsRubyスクリプトを読み込む</a></li>
+<li><a href="#label:17">名前の変換</a></li>
+<li><a href="#label:18">EmacsLisp変数へのアクセス</a></li>
+<li><a href="#label:19">関数呼出し</a></li>
+<li><a href="#label:20">関数定義</a></li>
+<li><a href="#label:21">Special Form呼出し</a></li>
+<li><a href="#label:22">関数定義型マクロ呼出し</a></li>
+<li><a href="#label:23">アドバイス</a></li>
+<li><a href="#label:24">出力関数の扱い</a></li>
+<li><a href="#label:25">ユーザ定義クラス・モジュール内でEmacsの機能を使う</a></li>
+<li><a href="#label:26">ElAppクラスの使用例1</a></li>
+<li><a href="#label:27">ElAppクラスの使用例2</a></li>
+</ul></li>
+<li><p><a href="#label:28">自動テストを作成する</a></p>
+<ul>
+<li><a href="#label:29">コマンドラインオプション</a></li>
+</ul></li>
+<li><a href="#label:30">el4rコマンド</a></li>
+<li><p><a href="#label:31">EmacsRuby APIリファレンス</a></p>
+<ul>
+<li><a href="#label:32">EmacsLisp関数と同名のもの</a></li>
+<li><a href="#label:42">EmacsLisp関数と同じ働きだが、名前がかぶるので接頭辞をつけたもの</a></li>
+<li><a href="#label:46">Ruby側のメソッド</a></li>
+<li><a href="#label:56">低レベルメソッド</a></li>
+<li><a href="#label:58">ユーティリティメソッド</a></li>
+</ul></li>
+<li><a href="#label:61">EmacsLispからRubyにアクセスする</a></li>
+<li><a href="#label:62">使用例</a></li>
+<li><p><a href="#label:63">EmacsRubyスクリプトのパッケージ方法</a></p>
+<ul>
+<li><a href="#label:64">ディレクトリ構成</a></li>
+<li><a href="#label:65">autoloadディレクトリ</a></li>
+<li><a href="#label:66">setup.rbを使ったパッケージング</a></li>
+</ul></li>
+<li><a href="#label:67">リンク</a></li>
+</ul>
+<hr />
+
+<h1><a name="Title:" href="#Title:">Title:</a> <a name="label:0">el4r 〜EmacsRubyで楽しいEmacsライフ〜</a></h1><!-- RDLabel: "el4r 〜EmacsRubyで楽しいEmacsライフ〜" -->
+
+<pre>$Id: el4r.ja.rd.r 1380 2006-09-21 07:23:15Z rubikitch $</pre>
+<p>Emacsの拡張言語に「Ruby」も加えましょう♪</p>
+<p>徹底した自動テストでEmacsLispのバグをなくしましょう♪</p>
+<p>最新Version 1.0.4</p>
+<h2><a name="1" href="#1">1</a> <a name="label:1">What's new</a></h2><!-- RDLabel: "What's new" -->
+
+<h3><a name="1.1" href="#1.1">1.1</a> <a name="label:2">[2006/09/21] 1.0.4 released</a></h3><!-- RDLabel: "[2006/09/21] 1.0.4 released" -->
+
+<ul>
+<li>ElAppクラス内でdefunできるようになりました。</li>
+</ul>
+<h3><a name="1.2" href="#1.2">1.2</a> <a name="label:3">[2006/03/12] 1.0.3 released</a></h3><!-- RDLabel: "[2006/03/12] 1.0.3 released" -->
+
+<ul>
+<li>Procオブジェクトによるinteractive指定が可能になりました。</li>
+<li>インストール時に.xemacs/init.elが存在するとき、それも書き換えるようにしました。</li>
+<li>manpageを用意しました。</li>
+</ul>
+<h3><a name="1.3" href="#1.3">1.3</a> <a name="label:4">[2005/12/11] 1.0.2 released</a></h3><!-- RDLabel: "[2005/12/11] 1.0.2 released" -->
+
+<ul>
+<li>el4r-rctool がWindowsで誤動作するバグを修正。インストーラの修正のみです。</li>
+</ul>
+<h3><a name="1.4" href="#1.4">1.4</a> <a name="label:5">[2005/12/02] 1.0.1 released</a></h3><!-- RDLabel: "[2005/12/02] 1.0.1 released" -->
+
+<ul>
+<li>Emacs-snapshotに対応。</li>
+</ul>
+<h3><a name="1.5" href="#1.5">1.5</a> <a name="label:6">[2005/12/01] 1.0.0 released</a></h3><!-- RDLabel: "[2005/12/01] 1.0.0 released" -->
+
+<ul>
+<li>インストーラ導入。</li>
+<li>パッケージングポリシー導入。</li>
+<li>まれにfatalで落ちる不具合を修正。</li>
+<li>Rubyで定義した関数がEmacsLisp側でGCされてしまう不具合を修正。</li>
+<li>el4r-runtest.rbコマンドをel4r-runtestに名前変更。</li>
+<li>el4rコマンドを導入。</li>
+<li><p>EmacsRuby側で定義された関数を追加。</p>
+<ul>
+<li>define_minor_mode</li>
+<li>define_derived_mode</li>
+<li>eval_after_load</li>
+</ul></li>
+</ul>
+<h3><a name="1.6" href="#1.6">1.6</a> <a name="label:7">[2005/10/11] 0.9.3 released</a></h3><!-- RDLabel: "[2005/10/11] 0.9.3 released" -->
+
+<ul>
+<li>el4r-runtest.rbで、テストスクリプトファイルが存在しないとき例外終了するようにしました。</li>
+<li>EmacsRubyスクリプトでp/print/putsなどのIO関数が使えるようになりました。</li>
+<li>エラー処理のバグを修正しました。</li>
+<li>動作がより安定しました。</li>
+</ul>
+<h3><a name="1.7" href="#1.7">1.7</a> <a name="label:8">[2005/10/05] 0.9.2 released</a></h3><!-- RDLabel: "[2005/10/05] 0.9.2 released" -->
+
+<ul>
+<li>el4r全体の設定を ~/.el4rrc.rb に保存するようにしました。</li>
+<li>設定を自動化しました。</li>
+<li>任意のディレクトリに設置できるようになりました。</li>
+<li>newbufメソッドにブロックをつけられるようになりました。</li>
+<li>ElAppクラスを導入しました。</li>
+<li>Windows（WINEにて確認）対応しました。</li>
+<li>el4r_loadの探索範囲が広がりました。</li>
+<li>el4rディレクトリ以下にEmacsRuby添付ライブラリを置くようにしました。</li>
+</ul>
+<h2><a name="2" href="#2">2</a> <a name="label:9">概要</a></h2><!-- RDLabel: "概要" -->
+
+<p>通常、Emacsを拡張するにはEmacsLispというLisp方言を使います。
+このプログラムはEmacsLispに加えてRubyでもEmacsを操作できるようにします。
+Emacsを操作するためのRubyをEmacsLispに倣ってEmacsRubyと言うことにします。
+<a name="footmark:1" id="footmark:1" href="#foottext:1"><sup><small>*1</small></sup></a></p>
+<p>Emacsは長年広く使われているので数々のEmacsLispライブラリがあります。
+しかし、自分でEmacsを拡張するにはEmacsLispを書かなければいけませんでした。
+このプログラムで新たにRubyという選択肢ができました。
+Emacs使いではあるがLispはちょっと…という人は是非とも試してみてください。</p>
+<p>また、RubyのTest::Unitを使うことでEmacsLispプログラムのテストを完全自動化できます。
+EmacsLispを愛する人にも役立つと思います。</p>
+<h2><a name="3" href="#3">3</a> <a name="label:10">動機</a></h2><!-- RDLabel: "動機" -->
+
+<p>筆者は昔から<em>EmacsをRubyで拡張できたらなー</em>と思っていました。
+Rubyを知る前からEmacsLispを少し書くことができましたが、自分にとってEmacsLispはストレスのたまる言語です。
+なので、本処理をRubyなど他の言語で記述して、Emacsからはcall-processやshell-commandなどから呼出すことをよくやっていました。
+<a name="footmark:2" id="footmark:2" href="#foottext:2"><sup><small>*2</small></sup></a></p>
+<p>数年前、原作者の白井さんが<a href="http://blade.nagaokaut.ac.jp/cgi-bin/scat.rb/ruby/ruby-list/37730">[ruby-list:37730]</a>にてel4rを発表しました。
+当時はまだ実用にはまだほど遠い感じでしたので、頭の片隅に置くにとどまりました。
+しばらく後にCVSからチェックアウトしたら、いろいろ改良され、実用の見通しが立つまでになっていました。
+それから、何通かのメールのやり取りで開発を引き継ぐことになりました。</p>
+<h2><a name="4" href="#4">4</a> <a name="label:11">動作原理</a></h2><!-- RDLabel: "動作原理" -->
+
+<p>EmacsがRubyとプロセス間通信します。
+より正確には、Emacsとel4r-instanceというRubyスクリプトがプロセス間通信します。
+そのため、el4rはEmacsLispとRubyスクリプトが組になっています。</p>
+<p>el4r-instanceは、El4r::ELInstanceオブジェクトを作成し、Emacsからの式を待つループに入ります。
+式が来ると、El4r::ELInstanceオブジェクトの文脈（以後、el4rの文脈とする）で評価して結果をEmacsに返します。
+el4rの文脈では、el4rオブジェクトが知らないメソッドはEmacsLispの関数へ丸投げされます。
+そのため、ユーザにとってはEmacsにRubyが組み込まれたように見えます。</p>
+<h2><a name="5" href="#5">5</a> <a name="label:12">動作環境</a></h2><!-- RDLabel: "動作環境" -->
+
+<p>動作には以下の環境が必要です。</p>
+<ul>
+<li>ruby 1.8.2以上</li>
+<li>emacs21 / xemacs21</li>
+</ul>
+<p>筆者の環境はDebian GNU/Linuxです。
+他のGNU/Linux、Unix系OSでも問題なく動くと思われます。</p>
+<p>手許にWindows環境がないため、本物のWindowsでの動作確認はしていません。
+<a href="http://www.winehq.com/">WINE</a>上の"ruby 1.8.2 (2004-12-25) [i386-mswin32]"とMeadowの組み合わせで動作しています。</p>
+<p>さまざまな環境での動作状況を知りたいので、次のコマンドをel4rのディレクトリから実行し、OS名を明記の上、出力とtestlogファイルを<a href="mailto:rubikitch@ruby-lang.org?Subject=el4r">るびきち</a>まで送ってください。</p>
+<pre>ruby bin/el4r-runtest testing/test-el4r.rb --batch -l testlog --emacs=Emacsバイナリ名</pre>
+<h2><a name="6" href="#6">6</a> <a name="label:13">ダウンロード・インストール・設定</a></h2><!-- RDLabel: "ダウンロード・インストール・設定" -->
+
+<p>バージョン1.0.0よりインストーラがつきました。</p>
+<p>ダウンロード時に例外が発生するようでしたら、Rubyのバージョンを上げてください。
+（Emacs内でこのページを見ている人はコマンド群にリージョンをセットし、M-| shすれば楽です）
+付属の el4r-rctool スクリプトは現在の環境に合うように設定ファイルを自動更新します。
+すでに設定済みのファイルは、el4r blockの部分のみが el4r-rctool の設定に基いて変更されます。
+他の部分には危害を加えません。</p>
+<p>なお、バージョン0.9.1以前の el4r からバージョンアップするには、まず ~/.emacs から</p>
+<pre>(add-to-list 'load-path "~/src/el4r/elisp/")
+(require 'el4r)
+(el4r-boot)</pre>
+<p>の部分、 ~/.el4r/init.rb から</p>
+<pre>el4r_load "el4r-mode.rb"</pre>
+<p>の部分を手作業で削除してください。
+御迷惑をおかけします。
+以後のバージョンは el4r-rctool が設定を更新してくれます。</p>
+<p>任意のディレクトリにて以下のコマンドを実行してください。</p>
+<pre>ruby -ropen-uri -e 'URI("http://www.rubyist.net/~rubikitch/archive/el4r-1.0.4.tar.gz").read.display' &gt; el4r-1.0.4.tar.gz
+tar xzf el4r-1.0.4.tar.gz
+cd el4r-1.0.4
+ruby setup.rb
+
+ruby -S el4r-rctool -p
+ruby -S el4r-rctool -i</pre>
+<p>EmacsRubyスクリプトを置くディレクトリはデフォルトで ~/.el4r です。
+環境変数 EL4R_HOME で変えることもできます。</p>
+<ul>
+<li><a href="http://www.rubyist.net/~rubikitch/archive/el4r-1.0.4.tar.gz">el4r-1.0.4.tar.gz</a></li>
+</ul>
+<p>Victor Borjaさんが<a href="http://darcs.thehatcher.com/vic/erebor-ebuilds/app-emacs/">Gentoo ebuild</a>を作成してくれました。
+ありがとうございます。</p>
+<p>Boris Daixさんが<a href="http://alysse.dyndns.org/~bdaix/debian/">Debian package</a>を作成してくれました。
+ありがとうございます。
+/etc/apt/sources.listに次の設定を加えてください。</p>
+<pre>deb http://alysse.dyndns.org/~bdaix/debian/packages unstable/
+deb-src http://alysse.dyndns.org/~bdaix/debian/packages unstable/</pre>
+<h2><a name="7" href="#7">7</a> <a name="label:14">起動</a></h2><!-- RDLabel: "起動" -->
+
+<p>Emacs上で</p>
+<pre>M-x el4r-boot</pre>
+<p>を実行します。
+インストール段階でel4rはすでに起動しています。
+挙動がおかしくなったとき、init.rbを書き換えた時などはel4rの再起動が必要です。
+再起動も同じコマンドを使います。</p>
+<h2><a name="8" href="#8">8</a> <a name="label:15">EmacsRubyを書く</a></h2><!-- RDLabel: "EmacsRubyを書く" -->
+
+<p>el4rを起動するとき、自動的に ~/.el4r/init.rb をel4rの文脈でevalします。
+el4rの文脈だと通常のRubyに加えてEmacsLisp関数・変数にアクセスしたり、EmacsLisp関数を定義したりできます。</p>
+<h3><a name="8.1" href="#8.1">8.1</a> <a name="label:16">EmacsRubyスクリプトを読み込む</a></h3><!-- RDLabel: "EmacsRubyスクリプトを読み込む" -->
+
+<p>EmacsRubyスクリプトを読み込むには、el4r_loadメソッドを使います。
+引数に指定したファイル名のスクリプトをel4rの文脈でevalします。</p>
+<p>el4r_loadで読み込まれるスクリプトは、デフォルトで ~/.el4r → ~/.el4r/site → el4rパッケージの el4r ディレクトリの順に探されます。
+他パッケージのEmacsRubyスクリプトは ~/.el4r/site 以下にインストールされます。</p>
+<p>もちろん通常のloadも使えます。
+この場合、el4rの文脈ではなく通常のRubyライブラリとして読み込みます。
+el4rでは、 ~/.el4r（環境変数EL4R_HOMEで指定したディレクトリ）も$:（$LOAD_PATH）に加えています。</p>
+<h3><a name="8.2" href="#8.2">8.2</a> <a name="label:17">名前の変換</a></h3><!-- RDLabel: "名前の変換" -->
+
+<p>RubyとEmacsLispでは名前の付け方の慣習に違いがあります。
+通常、単語の区切りとしてEmacsLispでは「-」、Rubyでは「_」が使われます。
+そのためel4rではEmacsLisp側の関数・変数をRubyで指定するとき、「_」を「-」に置換します。</p>
+<p>例：</p>
+<pre>find_file -&gt; find-file</pre>
+<p>また、RubyとEmacsLispでは関数名や変数名やシンボルに使える文字集合が違います。
+EmacsLispの方が多くの種類の文字が使えます。
+ということは、Rubyでは表現できないものも出てきます。
+御安心ください。
+こういう場合、文字列で指定できるのです。</p>
+<p>例：</p>
+<pre>se/make-summary-buffer関数を呼び出す。
+funcall("se/make-summary-buffer")</pre>
+<h3><a name="8.3" href="#8.3">8.3</a> <a name="label:18">EmacsLisp変数へのアクセス</a></h3><!-- RDLabel: "EmacsLisp変数へのアクセス" -->
+
+<p>EmacsLisp変数へのアクセスは<code>elvar</code>というオブジェクトを使います。
+このオブジェクトはRubyの構造体のようにアクセスできます。</p>
+<p>例：</p>
+<pre>elvar.a_string = "Hello"            # (setq a-string "Hello")
+elvar["a-string"] = "Hi"            # (setq a-string "Hi")
+elvar["*an/odd+variable!*"] = 10    # (setq *an/odd+variable!* 10)</pre>
+<h3><a name="8.4" href="#8.4">8.4</a> <a name="label:19">関数呼出し</a></h3><!-- RDLabel: "関数呼出し" -->
+
+<p>el4rオブジェクトは自分の知らない関数を呼出そうとすると、EmacsLisp側の関数を呼びます（method_missing）。</p>
+<p>例：</p>
+<pre>buffer_string             # (buffer-string)
+find_file("~/.emacs")     # (find-file "~/.emacs")
+funcall("1+1")            # (1+1)</pre>
+<h3><a name="8.5" href="#8.5">8.5</a> <a name="label:20">関数定義</a></h3><!-- RDLabel: "関数定義" -->
+
+<p>EmacsRuby側でEmacsLisp関数を定義することもできます。
+Rubyと同様にEmacsLispにも「関数を定義する関数」が存在します。
+よって、関数呼出しができれば関数定義もできてしまうのです。</p>
+<p>関数の引数はイテレータの引数となります。</p>
+<p>例：</p>
+<pre>defun(:my_command2,
+      :interactive =&gt; "d", :docstring =&gt; "description...") { |point|
+  insert_string("Current point is #{point}."); newline
+}</pre>
+<p>また、Procによるinteractive指定もできます。
+この場合、ArrayまたはEmacsLispのリストを返す必要があります。</p>
+<p>例：</p>
+<pre>interactive_proc = lambda { [1+1, 1] }
+defun(:my_command3,
+      :interactive =&gt; interactive_proc) { |a, b|
+  sum = a + b
+}</pre>
+<h3><a name="8.6" href="#8.6">8.6</a> <a name="label:21">Special Form呼出し</a></h3><!-- RDLabel: "Special Form呼出し" -->
+
+<p>save-excursionやwith-current-bufferのようなイテレータっぽいSpecial Formの呼出し方はやや特殊です。
+EmacsLispのイテレータ<a name="footmark:3" id="footmark:3" href="#foottext:3"><sup><small>*3</small></sup></a>はEmacsRubyでもやはりイテレータなのです。
+<code>with(関数名, 引数) {...}</code>のように使います。
+関数名で直接呼び出せないのは現在の仕様上の制約です。</p>
+<p>例：</p>
+<pre>with(:save_excursion) do
+  goto_char 1
+  re_search_forward('^\\(.+\\)$')
+end
+match_string 1</pre>
+<h3><a name="8.7" href="#8.7">8.7</a> <a name="label:22">関数定義型マクロ呼出し</a></h3><!-- RDLabel: "関数定義型マクロ呼出し" -->
+
+<p>よく使われる関数定義型のマクロもRuby的に自然に呼び出せるようにしました。
+このタイプは define_derived_mode と define_minor_mode です。
+例：</p>
+<pre>define_derived_mode(:foo_mode, :fundamental_mode, "FOO", "doc") do
+  @passed = true
+end
+
+define_minor_mode(:a_minor_mode, "test minor mode") do
+  @passed = true
+end</pre>
+<h3><a name="8.8" href="#8.8">8.8</a> <a name="label:23">アドバイス</a></h3><!-- RDLabel: "アドバイス" -->
+
+<p><code>defadvice</code>によるadviceも定義できます。
+第1引数は関数名、以後の引数はadviceのパラメータをSymbolで指定します。</p>
+<p>最後の省略可能引数にHashが取れます。
+関数定義同様、<code>:interactive</code>と<code>:docstring</code>を指定できます。</p>
+<p>例：</p>
+<pre># define a function
+defun(:adtest3){ 1 }
+# now define an advice
+defadvice(:adtest3, :around, :adv3, :activate,
+          :docstring=&gt;"test advice", :interactive=&gt;true) {
+  ad_do_it
+  elvar.ad_return_value = 2
+}</pre>
+<h3><a name="8.9" href="#8.9">8.9</a> <a name="label:24">出力関数の扱い</a></h3><!-- RDLabel: "出力関数の扱い" -->
+
+<p>print / printf / puts / putc / p などの出力を行う組み込み関数の出力は *el4r:output* バッファに書き出されます。
+デバッグなどに使ってください。</p>
+<p>内部的には、 El4r::El4rOutput オブジェクトを <code>$&gt;</code> に代入しています。
+El4r::El4rOutput#write メソッドは *el4r:output* バッファに文字列を書き込むメソッドです。
+出力を行う組み込み関数は最終的にはwriteが呼ばれるのでprintなども使えるのです。</p>
+<h3><a name="8.10" href="#8.10">8.10</a> <a name="label:25">ユーザ定義クラス・モジュール内でEmacsの機能を使う</a></h3><!-- RDLabel: "ユーザ定義クラス・モジュール内でEmacsの機能を使う" -->
+
+<p>EmacsRubyを導入する理由のひとつに、オブジェクト指向プログラミングがしたいというのもあるでしょう。
+オブジェクト指向プログラミングといえば、まずはクラス定義です。
+クラスを定義してしまうと、もはやel4rの文脈ではないからEmacsLispが呼び出せなくなるのではないか？
+心配無用です。
+クラス・モジュールを定義し、その中で</p>
+<pre>include ElMixin</pre>
+<p>と書きましょう。</p>
+<p>これでいつものようにEmacsLispを呼び出せます。
+自分の知らないメソッドはEmacsLispに投げられます。</p>
+<p>testing/test-el4r.rbの<code>TestEl4r</code>クラスを参考にしてください。</p>
+<p>また、ElMixinのクラス版ともいえる、ElAppクラスも用意しています。
+Hashでパラメータを渡すことができます。</p>
+<h3><a name="8.11" href="#8.11">8.11</a> <a name="label:26">ElAppクラスの使用例1</a></h3><!-- RDLabel: "ElAppクラスの使用例1" -->
+
+<p>バージョン1.0.3以前ではElAppサブクラスのインスタンスメソッドの中でdefunする必要がありました。</p>
+<pre>class Foo &lt; ElApp
+  def initialize(x)
+    elvar.v = x[:value]
+    defun(:twice_v) do
+      elvar.v *= 2
+    end
+
+    defun(:str0) do
+      do_str0 x[:str]
+    end
+  end
+
+  def do_str0(str)
+    (str*2).capitalize
+  end
+end</pre>
+<h3><a name="8.12" href="#8.12">8.12</a> <a name="label:27">ElAppクラスの使用例2</a></h3><!-- RDLabel: "ElAppクラスの使用例2" -->
+
+<p>バージョン1.0.4よりElAppサブクラスの中で直接defunできるようになりました。
+メソッドの中でdefunする必要がないので、見通しがよくなりました。
+クラス定義中のdefunは「EmacsLispを定義するdef」と思ってください。</p>
+<pre>class SmartDefunSample &lt; ElApp
+  def my_square(x)
+    x*x
+  end
+
+  defun(:testdefun, :interactive=&gt;true) do |x|
+    # This block is evaluated within a context of the SmartDefunSample INSTANCE.
+    # Not a context of the SmartDefunSample class!!
+    x ||= 16
+    elvar.val = my_square(x)  # call an instance method.
+  end
+end</pre>
+<h2><a name="9" href="#9">9</a> <a name="label:28">自動テストを作成する</a></h2><!-- RDLabel: "自動テストを作成する" -->
+
+<p>Rubyを使う大きな利点のひとつにTest::Unitという強力なテスト環境があります。
+EmacsLisp/EmacsRubyスクリプトのテストは別個にEmacsを立ち上げてやるべきです。
+Emacsの操作はEmacsセッション全体に影響を及ぼすため、テストが誤動作したときには最悪現在の編集環境を破壊しかねません。
+テスト用のEmacsなら、たとえそこで事故が起きようが編集環境には何ら悪影響がないので、安心してテストが行えます。
+こういう理由から、テストのためのミニ環境を用意しました。</p>
+<p>el4r-runtestは、新たにEmacsを立ち上げ、Test::Unit(RUNIT)でテストを行い、その結果を表示します。</p>
+<ul>
+<li><code>--batch</code>オプションをつけて起動するとテストを実行したら即終了します。（emacs -batch）</li>
+<li><code>Test::Unit::TestCase</code>クラスでは<code>ElMixin</code>をinclude/extendしているのでel4rのメソッド及びEmacsLisp関数が呼べます。</li>
+<li><p>あくまでミニ環境なのでキー操作は単純化しています。</p>
+<ul>
+<li><kbd>C-x C-c</kbd>に加え<kbd>q</kbd>, <kbd>M-k</kbd>でも終了できます。</li>
+<li><kbd>C-c</kbd>でテストを再実行できます。</li>
+<li><kbd>l</kbd>, <kbd>C-l</kbd>でログを表示します。</li>
+<li><kbd>SPACE</kbd>と<kbd>b</kbd>でスクロールします。</li>
+</ul></li>
+<li>Emacsの設定ファイルを読み込みません（--no-init-file, --no-site-file）。</li>
+<li>~/.el4r/init.rbを読み込みません。</li>
+<li>ロードすべきEmacsLispファイルは、テストスクリプト側でロードしてください。</li>
+</ul>
+<p>具体的にはテストクラスはこんな感じになります。
+<code>el4r_lisp_eval</code>の部分に<code>el_require</code>や<code>el_load</code>を使うこともできます。</p>
+<pre>require 'test/unit'
+class TestXXXX &lt; Test::Unit::TestCase
+  el4r_lisp_eval %((progn
+    初期化コード
+  ))
+
+  def setup
+    #
+  end
+
+  def teardown
+    #
+  end
+
+  def test_xxxx
+    #
+  end
+end</pre>
+<h3><a name="9.1" href="#9.1">9.1</a> <a name="label:29">コマンドラインオプション</a></h3><!-- RDLabel: "コマンドラインオプション" -->
+
+<pre>Usage: el4r-runtest [options] file
+    -Q, --init                       load site-start.el and .emacs
+    -b, --batch                      batch mode
+    -i                               interactive mode
+    -e, --emacs=EMACS                set emacs binary [default: ]
+        --ruby=RUBY                  set ruby binary [default: ]
+    -I load-path                     set load-path
+    -r, --el4r-root=DIR              el4r package root directory [for debug]
+    -n, --name=NAME                  Runs tests matching NAME.
+                                     (patterns may be used).
+    -t, --testcase=TESTCASE          Runs tests in TestCases matching TESTCASE.
+                                     (patterns may be used).
+    -v                               verbose output
+        --nw                         don't communicate with X, ignoring $DISPLAY
+                                     (emacs -nw)
+    -d, --debug                      debug output
+    -l, --log=LOGFILE                Specify a log file.
+        --show                       Show the test information only, for diagnosis.</pre>
+<p><code>--batch</code>, <code>--nw</code>はEmacsのオプションです。
+<code>-n</code>, <code>-t</code>はTest::Unitのオプションです。
+<code>-d</code>はバックトレースにel4r-instanceの行も含めます。</p>
+<h2><a name="10" href="#10">10</a> <a name="label:30">el4rコマンド</a></h2><!-- RDLabel: "el4rコマンド" -->
+
+<p>el4rコマンドは新たにEmacsを立ち上げ、引数に指定されたEmacsRubyスクリプトを実行します。
+使い方はel4r-runtestとほとんど同じです。</p>
+<pre>Usage: el4r [options] file
+    -Q, --init                       load site-start.el and .emacs
+    -b, --batch                      batch mode
+    -i                               interactive mode
+    -e, --emacs=EMACS                set emacs binary [default: ]
+        --ruby=RUBY                  set ruby binary [default: ]
+    -I load-path                     set load-path
+    -r, --el4r-root=DIR              el4r package root directory [for debug]
+        --nw                         don't communicate with X, ignoring $DISPLAY
+                                     (emacs -nw)
+    -d, --debug                      debug output
+    -l, --log=LOGFILE                Specify a log file.
+        --show                       Show the test information only, for diagnosis.</pre>
+<h2><a name="11" href="#11">11</a> <a name="label:31">EmacsRuby APIリファレンス</a></h2><!-- RDLabel: "EmacsRuby APIリファレンス" -->
+
+<h3><a name="11.1" href="#11.1">11.1</a> <a name="label:32">EmacsLisp関数と同名のもの</a></h3><!-- RDLabel: "EmacsLisp関数と同名のもの" -->
+
+<dl>
+<dt><a name="label:33" id="label:33"><code>funcall(<var>name_or_lambda</var>, *<var>args</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "funcall" -->
+<dd>
+<p>関数name_or_lambdaを引数argsをつけて呼出します。</p></dd>
+<dt><a name="label:34" id="label:34"><code>with(<var>name</var>, *<var>args</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "with" -->
+<dd>
+<p>save-excursionやwith-current-bufferなど最後にFORMSを取るスペシャルフォームを呼出します。</p></dd>
+<dt><a name="label:35" id="label:35"><code>defun(<var>name</var>, <var>attrs</var> = <var>nil</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "defun" -->
+<dd>
+<p>関数nameを定義します。attrsは:interactiveと:docstringを取るHashです。
+関数の引数はブロック引数です。</p></dd>
+<dt><a name="label:36" id="label:36"><code>define_key(<var>map</var>, <var>key</var>, <var>command</var> = <var>nil</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "define_key" -->
+<dd>
+<p>mapはキーマップの変数名をシンボルで指定します。
+keyは '\C-x\C-c' のように''文字列で指定します。
+ブロックを指定することもできます。</p></dd>
+<dt><a name="label:37" id="label:37"><code>let(*<var>name_and_value_list</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "let" -->
+<dd>
+<p>name_and_value_listは要素の数が偶数の配列で、偶数番目に変数名、奇数番目に変数の値を指定します。</p></dd>
+<dt><a name="label:38" id="label:38"><code>defadvice(<var>func</var>, *<var>args</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "defadvice" -->
+<dd>
+<p>funcのアドバイスを定義します。
+argsはアドバイスのパラメータ（:around、:activateなど）。
+ブロックの中でad_do_itを使うことができます。</p></dd>
+<dt><a name="label:39" id="label:39"><code>define_minor_mode(<var>mode</var>, <var>doc</var>, <var>init_value</var>=<var>nil</var>, <var>lighter</var>=<var>nil</var>, <var>keymap</var>=<var>nil</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "define_minor_mode" -->
+<dd>
+<p>マイナーモードを定義します。</p></dd>
+<dt><a name="label:40" id="label:40"><code>define_derived_mode(<var>child</var>, <var>parent</var>, <var>name</var>, <var>docstring</var>=<var>nil</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "define_derived_mode" -->
+<dd>
+<p>派生モードを定義します。</p></dd>
+<dt><a name="label:41" id="label:41"><code>eval_after_load(<var>lib</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "eval_after_load" -->
+<dd>
+<p>ライブラリlibをロードするときに実行するブロックを指定します。
+すでにロードしているときは直ちにブロックを評価します。</p></dd>
+</dl>
+<h3><a name="11.2" href="#11.2">11.2</a> <a name="label:42">EmacsLisp関数と同じ働きだが、名前がかぶるので接頭辞をつけたもの</a></h3><!-- RDLabel: "EmacsLisp関数と同じ働きだが、名前がかぶるので接頭辞をつけたもの" -->
+
+<dl>
+<dt><a name="label:43" id="label:43"><code>el_require(*<var>args</var>)</code></a></dt><!-- RDLabel: "el_require" -->
+<dd>
+<p>必要ならばEmacsLispを読み込みます。</p></dd>
+<dt><a name="label:44" id="label:44"><code>el_load(*<var>args</var>)</code></a></dt><!-- RDLabel: "el_load" -->
+<dd>
+<p>EmacsLispを読み込みます。</p></dd>
+<dt><a name="label:45" id="label:45"><code>el_lambda(<var>attr</var> = <var>nil</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "el_lambda" -->
+<dd>
+<p>ラムダ式。使い方はdefunと同じです。</p></dd>
+</dl>
+<h3><a name="11.3" href="#11.3">11.3</a> <a name="label:46">Ruby側のメソッド</a></h3><!-- RDLabel: "Ruby側のメソッド" -->
+
+<dl>
+<dt><a name="label:47" id="label:47"><code>el4r_load(<var>path_to_rb</var>, <var>is_noerror</var> = <var>nil</var>)</code></a></dt><!-- RDLabel: "el4r_load" -->
+<dd>
+<p>path_to_rbで指定されたEmacsRubyスクリプトを読み込みます。
+スクリプトの内容はel4rの文脈で評価されます。</p>
+<p>通常はtrueを返します。
+is_noerrorがtrueのとき、ファイルが存在しない場合はfalseを返します。</p></dd>
+<dt><a name="label:48" id="label:48"><code>el4r_lisp_eval(<var>lispexpr</var>)</code></a></dt><!-- RDLabel: "el4r_lisp_eval" -->
+<dd>
+<p>EmacsLispを評価します。</p></dd>
+<dt><a name="label:49" id="label:49"><code>el4r_ruby2lisp(<var>obj</var>)</code></a></dt><!-- RDLabel: "el4r_ruby2lisp" -->
+<dd>
+<p>objをEmacsLispの表現に変換します。</p></dd>
+<dt><a name="label:50" id="label:50"><code>el4r_log(<var>msg</var>)</code></a></dt><!-- RDLabel: "el4r_log" -->
+<dd>
+<p>ログにmsgを出力します。</p></dd>
+<dt><a name="label:51" id="label:51"><code>el4r_prin1(*<var>objs</var>)</code></a></dt><!-- RDLabel: "el4r_prin1" -->
+<dd>
+<p>objsひとつひとつの文字列表現をログに出力します。</p></dd>
+<dt><a name="label:52" id="label:52"><code>el4r_p(*<var>objs</var>)</code></a></dt><!-- RDLabel: "el4r_p" -->
+<dd>
+<p>objs.inspectをログに出力します。</p></dd>
+<dt><a name="label:53" id="label:53"><code>el4r_backtrace(<var>msg</var>=<var>nil</var>)</code></a></dt><!-- RDLabel: "el4r_backtrace" -->
+<dd>
+<p>バックトレースをログに出力します。メッセージmsgを指定できます。</p></dd>
+<dt><a name="label:54" id="label:54"><code>el4r_debug(<var>msg</var> = <var>nil</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "el4r_debug" -->
+<dd>
+<p>デバッグモードのとき、msgまたはブロックの結果をログに出力します。</p></dd>
+<dt><a name="label:55" id="label:55"><code>el4r_ruby_eval(<var>source</var>)</code></a></dt><!-- RDLabel: "el4r_ruby_eval" -->
+<dd>
+<p>el4rの文脈でsourceを評価します。
+デバッグモードで例外が起きたとき、スタックトレースをログに出力します。</p></dd>
+</dl>
+<h3><a name="11.4" href="#11.4">11.4</a> <a name="label:56">低レベルメソッド</a></h3><!-- RDLabel: "低レベルメソッド" -->
+
+<dl>
+<dt><a name="label:57" id="label:57"><code>el(<var>expression</var>)</code></a></dt><!-- RDLabel: "el" -->
+<dd>
+<p>文字列やシンボルで指定したexpressionがそのままEmacsLispに展開されます。</p></dd>
+</dl>
+<h3><a name="11.5" href="#11.5">11.5</a> <a name="label:58">ユーティリティメソッド</a></h3><!-- RDLabel: "ユーティリティメソッド" -->
+
+<dl>
+<dt><a name="label:59" id="label:59"><code>newbuf(<var>param</var>, &amp;<var>block</var>)</code></a></dt><!-- RDLabel: "newbuf" -->
+<dd>
+<p>paramはハッシュで、いろいろな要素を一度に指定してバッファを作成します。
+バッファの名前はもちろん、内容やポイント位置から表示方法まで指定できます。
+ブロックをつけると、バッファを初期化した後にブロックを実行します。</p></dd>
+<dt><a name="label:60" id="label:60"><code>bufstr(<var>buf</var>=<var>current_buffer</var>)</code></a></dt><!-- RDLabel: "bufstr" -->
+<dd>
+<p>バッファの内容を文字列で返します。</p></dd>
+</dl>
+<h2><a name="12" href="#12">12</a> <a name="label:61">EmacsLispからRubyにアクセスする</a></h2><!-- RDLabel: "EmacsLispからRubyにアクセスする" -->
+
+<p>EmacsRuby側で関数・変数定義ができるので必要かどうかわかりませんが、EmacsLispからRubyにアクセスすることもできます。
+EmacsLispプログラム内では<code>el4r-ruby-eval</code>関数を使います。
+唯一の引数が評価するRuby式です。
+尤も、EmacsRubyで書いたプログラムをEmacsLisp内でも使いたいならば、<code>defun</code>や<code>elvar</code>でEmacsLispから見えるようにするのが賢明です。</p>
+<p>対話的にEmacsRubyにアクセスするには </p>
+<pre>M-x el4r-ruby-eval-prompt</pre>
+<p>してください。バッファ全体のEmacsRuby式を評価するには</p>
+<pre>M-x el4r-ruby-eval-buffer</pre>
+<p>リージョン内は</p>
+<pre>M-x el4r-ruby-eval-region</pre>
+<p>してください。</p>
+<p>また、examples/el4r-mode.rbをロードすると（初期設定でロードされています）、*ruby-scratch*バッファが作成されます。</p>
+<ul>
+<li>scratch*バッファのようにEmacsRuby式を書いて<kbd>C-j</kbd>で評価できます。</li>
+</ul>
+<h2><a name="13" href="#13">13</a> <a name="label:62">使用例</a></h2><!-- RDLabel: "使用例" -->
+
+<p>EmacsRubyでのmajor-modeを作成例は lib/el4r/emacsruby/el4r-mode.rb を見てください。</p>
+<p>各々のメソッドの使用例についてはtesting/test-el4r.rbを見てください。
+テストプログラムは仕様書です。
+正しい使い方や期待されるべき値など多くのことを語っています。</p>
+<h2><a name="14" href="#14">14</a> <a name="label:63">EmacsRubyスクリプトのパッケージ方法</a></h2><!-- RDLabel: "EmacsRubyスクリプトのパッケージ方法" -->
+
+<h3><a name="14.1" href="#14.1">14.1</a> <a name="label:64">ディレクトリ構成</a></h3><!-- RDLabel: "ディレクトリ構成" -->
+
+<p>バージョン1.0.0よりEmacsRubyスクリプトはsystem wideにインストールすることが可能になりました。
+Ruby 1.8を使っているものと仮定すると次のような配置になります。</p>
+<pre>site_ruby/1.8/el4r/                    # el4rが使う通常のライブラリ
+site_ruby/1.8/el4r/emacsruby/          # EmacsRubyスクリプト
+site_ruby/1.8/el4r/emacsruby/autoload/ # el4r起動時に実行されるEmacsRubyスクリプト</pre>
+<p>通常のライブラリは普通に load / require で呼出されます。
+EmacsRubyスクリプトは el4r_load で呼出されます。</p>
+<h3><a name="14.2" href="#14.2">14.2</a> <a name="label:65">autoloadディレクトリ</a></h3><!-- RDLabel: "autoloadディレクトリ" -->
+
+<p>autoloadにあるEmacsRubyスクリプト群はel4r起動時に順次実行されます。
+EmacsRubyスクリプトの初期設定・起動のために使います。</p>
+<p>このディレクトリにファイルを配置するとき、ファイル名の先頭に数字を2文字含むようにしてください。たとえば次のようなファイルを配置すると、</p>
+<pre>00init.rb
+50langhelp.rb
+70el4r-mode.rb  </pre>
+<p>数字の若い順に実行されます。それ以外のファイルは無視されます。
+Debian GNU/LinuxのEmacsが起動時に /etc/emacs/site-start.d/ に配置したEmacsLispを順次読み込むことに似ています。</p>
+<h3><a name="14.3" href="#14.3">14.3</a> <a name="label:66">setup.rbを使ったパッケージング</a></h3><!-- RDLabel: "setup.rbを使ったパッケージング" -->
+
+<p>あおきさんの<a href="http://i.loveruby.net/en/projects/setup/">setup.rb</a>を使うと簡単にパッケージングできます。
+EmacsRubyを配布するためには、次のようにディレクトリをレイアウトしてください。</p>
+<pre>bin/                         # 実行ファイル
+lib/el4r/                    # el4rが使う通常のライブラリ
+lib/el4r/emacsruby/          # EmacsRubyスクリプト
+lib/el4r/emacsruby/autoload/ # el4r起動時に実行されるEmacsRubyスクリプト
+ext/                         # 拡張ライブラリ
+data/                        # データ</pre>
+<p>付属のel4r-mode.rb、<a href="http://www.rubyist.net/~rubikitch/computer/langhelp/">langhelp</a>はこの方法でパッケージングしています。</p>
+<h2><a name="15" href="#15">15</a> <a name="label:67">リンク</a></h2><!-- RDLabel: "リンク" -->
+
+<ul>
+<li><a href="http://pymacs.progiciels-bpi.ca/">Pymacs(so to speak EmacsPython)</a></li>
+<li><a href="http://www.rubyist.net/~rubikitch/computer/langhelp/">langhelp(Integrated help system in EmacsRuby)</a></li>
+</ul>
+<hr />
+<p>
+<a name="foottext:1" id="foottext:1" href="#footmark:1"><sup><small>*1</small></sup></a><small>elispに倣ってerubyじゃありませんよ。erubyは別物ですから。</small><br />
+<a name="foottext:2" id="foottext:2" href="#footmark:2"><sup><small>*2</small></sup></a><small>EmacsLisp原理主義者がうらやましい。</small><br />
+<a name="foottext:3" id="foottext:3" href="#footmark:3"><sup><small>*3</small></sup></a><small>通常EmacsLispではそういう言い方はしないが。</small><br />
+</p>
+</body>
+</html>

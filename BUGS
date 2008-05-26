@@ -1,0 +1,2 @@
+- "Mark set" message prevents minibuffer message from Ruby.
+- XEmacs 21.4.6 sometimes reads and evals "el4r_boot^@" after el4r-boot.

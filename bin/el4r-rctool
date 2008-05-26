@@ -1,0 +1,279 @@
+#!/usr/bin/env ruby
+#### Embedded RCtool ####
+#  RCtool - Automatic generate/update rcfiles.
+#  Copyright (C) 2005 rubikitch <rubikitch@ruby-lang.org>
+#  Version: $Id: rctool.rb 1016 2005-12-09 00:33:33Z rubikitch $
+
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#    This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#    You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+require 'fileutils'
+require 'optparse'
+
+class RCtool
+  def initialize(x={})
+    @no_op = x[:no_op]
+    @windows_p = (RUBY_PLATFORM =~ /win/i)
+    @backup_dir = x[:backup_dir] || "backup"
+    @home_dir = (x[:home_dir] || File.expand_path("~")).chomp "/"
+    @name = x[:name]
+
+    @patches = []
+    
+    @verbose = true
+
+    unless @no_op
+      at_exit {
+        commit
+      }
+    end
+  end
+
+  Patch = Struct.new :file, :block, :comment_start, :template, :where
+  def define_patch(file, block, comment_start, template="%s", where=:append)
+    @patches << Patch.new(file, block, comment_start, template, where)
+  end
+
+  #######
+  private
+  #######
+
+  def beginning_of_block(comment_start)
+    "#{comment_start} Beginning of the #{@name} block:"
+  end
+
+  def attention_msg(comment_start)
+    "#{comment_start} RCtool generated this block automatically. " +
+      "DO NOT MODIFY this block!"
+  end
+
+  def end_of_block(comment_start)
+    "#{comment_start} End of the #{@name} block."
+  end
+
+  def user_area_msg(comment_start)
+    "#{comment_start} User-setting area is below this line."
+  end
+  
+    
+  def set_filenames(file)
+    if file[0,1] == '/' then
+      backup_dir = "#{@backup_dir}/__absolute__"
+      @target_file = file
+    elsif @windows_p and file[0,2] =~ /[A-Z]:/i # for windows
+      backup_dir = "#{@backup_dir}/__absolute__"
+      @target_file = file
+      file = file[2..-1]
+    else
+      backup_dir = "#{@backup_dir}/"
+      @target_file = "#{@home_dir}/#{file}"
+    end
+    @backup_file = "#{backup_dir}#{file}.backup"
+    @modified_file = "#{backup_dir}#{file}.new"
+
+    FileUtils.mkdir_p [File.dirname(@target_file), File.dirname(@modified_file)] unless @no_op
+  end
+  
+
+  def apply_patch(patch)
+    file, block, comment_start, template, where = patch.to_a
+
+    use_template = false
+    unless File.exist? @target_file
+      use_template = true
+      File.open(@target_file, "w") {}
+      raise "failed to write #{@target_file}" unless File.exist? @target_file 
+    end
+    FileUtils.cp @target_file, @backup_file, :verbose=>@verbose
+    
+    open(@modified_file, "w") {|f|
+      puts "Generating #{@modified_file}..." if @verbose
+      old_content = File.read(@target_file)
+
+      bob       = beginning_of_block comment_start
+      attention = attention_msg comment_start
+      eob       = end_of_block comment_start
+      user_area = user_area_msg comment_start
+
+      bob_re       = Regexp.quote bob
+      eob_re       = Regexp.quote eob
+      user_area_re = Regexp.quote user_area
+      
+      block = ["", bob, attention, block.chomp, eob, user_area]
+      
+      m = old_content.match(/\n?#{bob_re}\n.+^#{eob_re}\n(#{user_area_re}\n)?/m)
+      if m                      # target_file exists / has block
+        block = block[1..-1] if where == :prepend and old_content =~ /\A#{bob_re}/
+        f.print m.pre_match
+        f.puts block
+        f.print m.post_match
+      elsif use_template        # target_file does not exist
+        f.printf(template, block.join("\n").strip)
+      elsif where == :append    # target_file exists / has no block
+        f.print old_content
+        f.puts block
+      elsif where == :prepend   # target_file exists / has no block
+        f.puts block.join("\n").strip
+        f.print old_content
+      else
+        raise ArgumentError, "invalid where: #{where}"
+      end
+    }
+  end
+
+  def install_file(patch)
+    FileUtils.cp @modified_file, @target_file, :verbose=>@verbose
+  end
+  
+  def uninstall_file(patch)
+    FileUtils.cp @backup_file, @target_file, :verbose=>@verbose
+  end
+  
+  def diff_file(patch)
+    system "diff -u #{@backup_file} #{@modified_file}"
+  end
+  
+
+  def commit
+    method_for_each_patch = nil
+    ARGV.options {|o|
+      o.on("-p", "--prepare",
+           "create the modified and backup rcfiles"
+           ) { method_for_each_patch = :apply_patch}
+      o.on("-d", "--diff",
+           "show the differences between the modified and the backup rcfiles"
+           ) { method_for_each_patch = :diff_file} 
+      o.on("-i", "--install",
+           "copy the modified rcfiles from BACKUPDIR to HOME"
+           ) { method_for_each_patch = :install_file}
+      o.on("-u", "--uninstall",
+           "copy the backup rcfiles from BACKUPDIR to HOME"
+           ) { method_for_each_patch = :uninstall_file}
+      o.on("-q", "--quiet", "quiet output") { @verbose=false }
+
+      o.parse!
+      
+      if method_for_each_patch
+        @patches.each do |patch|
+          set_filenames patch.file
+          __send__ method_for_each_patch, patch
+        end
+      else
+        puts o.help
+      end
+      
+    }
+  end
+end
+
+
+
+#### Definition ####
+# (shell-command "rm ~/.el4rrc.rb")
+# (progn (find-sh "rake rctool; bin/el4r-rctool -p ; bin/el4r-rctool -d; bin/el4r-rctool -i") (find-filez "~/.el4rrc.rb ~/.emacs ~/.el4r/init.rb"))
+# (find-sh "ruby ~/.el4rrc.rb")
+require 'tmpdir'
+require 'rbconfig'
+include Config
+
+home_dir_expr = %q!ENV['EL4R_HOME'] || File.expand_path("~/.el4r")!
+home_dir = eval home_dir_expr
+
+bindir = CONFIG["bindir"]
+datadir = CONFIG["datadir"]
+sitelibdir = CONFIG["sitelibdir"]
+rubylibdir = CONFIG["rubylibdir"]
+
+if File.directory? File.join(rubylibdir, "el4r") # debian
+  emacsrubydir = File.join(rubylibdir, "el4r/emacsruby")
+  siteemacsrubydir = File.join(sitelibdir, "el4r/emacsruby")
+else
+  emacsrubydir = File.join(sitelibdir, "el4r/emacsruby")
+  siteemacsrubydir = File.join(home_dir, "site")
+end
+
+el_program = File.expand_path('emacs/site-lisp/el4r.el', datadir)
+el_dir = File.dirname el_program
+
+rc = RCtool.new(:name=>"el4r")
+rc.define_patch(".el4rrc.rb", <<END_OF_BLOCK, "#", <<END_OF_TEMPLATE, :prepend)
+### Internal variables
+@stdlib_dir = #{emacsrubydir.dump}
+@site_dir = #{siteemacsrubydir.dump}
+@autoload_dir = #{File.join(emacsrubydir, "autoload").dump}
+@el_program_relative = "data/emacs/site-lisp/el4r.el"
+@instance_program_relative = "bin/el4r-instance"
+@el_program = #{el_program.dump}
+@instance_program = #{File.expand_path('el4r-instance', bindir).dump}
+@lisp_object_gc_trigger_count = 100
+@lisp_object_gc_trigger_increment = 100
+@ruby_gc_trigger_count = 100
+@ruby_gc_trigger_increment = 100
+@log_buffer = "*el4r:log*"
+@output_buffer = "*el4r:output*"
+@unittest_lisp_object_gc_trigger_count = 5000
+@unittest_lisp_object_gc_trigger_increment = 5000
+@unittest_ruby_gc_trigger_count = 5000
+@unittest_ruby_gc_trigger_increment = 5000
+@temp_file = "#{Dir.tmpdir}/el4r-\#{ENV['USER'] || ENV['USERNAME'] || 'me'}.tmp"
+
+### El4r bootstrap code
+def __conf__
+  if ENV['EL4R_ROOT']
+    $: << File.join(ENV['EL4R_ROOT'], "lib")
+  end
+  require 'el4r/el4r-sub'
+  ConfigScript.new(__FILE__)
+end
+
+def __elisp_init__
+  $> << "(setq \\n"
+  instance_variables.map{|iv| [iv[1..-1], instance_variable_get(iv)]}.each {|k,v|  $> << "el4r-\#{k.gsub(/_/,'-')} \#{v.inspect}\\n" if Numeric === v or String === v}
+  $> << ')' << "\n"
+end
+
+at_exit { __elisp_init__  if __FILE__==$0 }
+
+### Customizable variables
+### You can override these variables in User-setting area.
+# directory containing EmacsRuby scripts
+@home_dir = #{home_dir_expr}
+# startup EmacsRuby script
+@init_script = "init.rb"
+# EmacsRuby search path
+@el4r_load_path = [ @home_dir, @site_dir, @stdlib_dir, "." ]
+END_OF_BLOCK
+%s
+
+# Ruby interpreter name used by el4r
+@ruby_program = "ruby"
+# Emacs program name used by el4r / el4r-runtest.rb
+@emacs_program = "emacs"
+END_OF_TEMPLATE
+
+
+dotemacs_block = <<END_OF_BLOCK
+(add-to-list 'load-path #{el_dir.dump})
+(require 'el4r)
+(el4r-boot)
+END_OF_BLOCK
+
+rc.define_patch(".emacs", dotemacs_block, ";;", "%s", :append)
+xemacs_init = ".xemacs/init.el"
+if File.exist?(File.expand_path(xemacs_init, ENV['HOME']))
+  rc.define_patch(xemacs_init, dotemacs_block, ";;", "%s", :append)
+end
+
+rc.define_patch("#{home_dir}/init.rb", <<END_OF_BLOCK, "#", "%s", :prepend)
+# This is the el4r initialization file.
+END_OF_BLOCK
+
